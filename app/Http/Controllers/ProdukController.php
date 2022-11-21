@@ -57,7 +57,7 @@ class ProdukController extends Controller
             $data->save();
         }
 
-        return redirect('/product/tambah');
+        return redirect('/admin/tambah');
     }
 
     public function tambah(){
@@ -74,9 +74,10 @@ class ProdukController extends Controller
     {
         $isi = Produk::where('id', $id)->get();
         foreach ($isi as $judul){
-        return view('contents.user.detail', [
-            'title' => $judul->nama
-        ]);
+            return view('contents.user.detail', [
+                'title' => $judul->nama,
+                'isi' => $isi
+            ]);
         }
     }
 

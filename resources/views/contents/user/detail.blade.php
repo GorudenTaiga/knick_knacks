@@ -2,7 +2,7 @@
 @section('content')
 <div class="gambar">
     <div class="foto">
-        <img src="logo3.jpeg">
+        <img src="">
     </div>
     <div class="foto">
         <p>Paket Doremi Kids Nussa Rara<br>

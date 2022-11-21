@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Auth\Events\Logout;
@@ -24,17 +25,24 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['auth']], function () {
+    //Kumpulan Tampilan User
     Route::prefix('/product')->group(function () {
-        /* Route 1 Link */
         Route::get('/', [ProdukController::class, 'index']);
-
-        /* Route 2 Link */
         Route::get('/{id}', [ProdukController::class, 'show']);
-        Route::get('/tambah', [ProdukController::class, 'tambah'])->name('tambah');
+        Route::get('/{id}/checkout');
+    });
+    Route::prefix('/user')->group(function () {
+        Route::get('/');
+        Route::get('/cart');
+        Route::get('/checkout');
+    });
 
-
-        /* Route 3 Link ++ */
+    //Kumpulan Tampilan Admin
+    Route::prefix('/admin')->group(function () {
+        Route::get('/', [AdminController::class, 'tampil']);
+        Route::get('/tambah', [ProdukController::class, 'tambah']);
         Route::post('/tambah', [ProdukController::class, 'store'])->name('simpan');
+        Route::get('/{id}', [ProdukController::class, 'show'])->name('show');
     });
 });
 
@@ -53,12 +61,4 @@ Route::post('/register', [LoginController::class, 'postRegister'])->name('postre
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
-});
-
-Route::get('/admin', function () {
-    return view('contents.admin.tampilan');
-});
-
-Route::get('/tampilanadmin', function () {
-    return view('Template.About');
 });
