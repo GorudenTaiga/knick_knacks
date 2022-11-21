@@ -14,21 +14,21 @@ body{
     margin:0px;
     padding:0px;
 }
- 
+
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
- 
+
 section{
     width:100%;
     height:15vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -37,12 +37,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -81,7 +81,7 @@ nav ul li a{
     color: #E20000;
 }
 .logo span:nth-child(2){
-    font-family: font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #3C38EA;
 }
 .container{
@@ -160,7 +160,7 @@ input{
     cursor: pointer;
     margin: 90px;
     border-radius: 10px;
-    background: #000; 
+    background: #000;
 }
 .loginn:hover{
     background: grey;
@@ -181,7 +181,7 @@ input{
             </ul>
         </nav>
     </section>
-   
+
     <div class="container">
         <div class="login">
             <form action="">
