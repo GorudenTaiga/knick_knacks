@@ -60,5 +60,5 @@ Route::get('/admin', function () {
 });
 
 Route::get('/tampilanadmin', function () {
-    return view('')
-})
+    return view('Template.About');
+});
