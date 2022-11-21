@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', [ProdukController::class, 'index']);
 
         /* Route 2 Link */
-        Route::get('/product/{id}', [ProdukController::class, 'show']);
+        Route::get('/{id}', [ProdukController::class, 'show']);
         Route::get('/tambah', [ProdukController::class, 'tambah'])->name('tambah');
 
 

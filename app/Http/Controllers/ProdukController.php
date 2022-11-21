@@ -72,9 +72,12 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
+        $isi = Produk::where('id', $id)->get();
+        foreach ($isi as $judul){
         return view('contents.user.detail', [
-            $isi = Produk::where('id', $id)->get()
+            'title' => $judul->nama
         ]);
+        }
     }
 
     /**
@@ -83,7 +86,7 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit(roduk $produk)
+    public function edit(Produk $produk)
     {
         //
     }
