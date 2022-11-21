@@ -12,7 +12,9 @@
 body{
     font-family: 'Poppins', sans-serif;
     background-color:#B0EBDB;
-    
+    margin:0px;
+    padding:0px;
+}
 ul{
     list-style:none;
 }
