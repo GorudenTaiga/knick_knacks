@@ -54,3 +54,11 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 });
+
+Route::get('/admin', function () {
+    return view('contents.admin.tampilan');
+});
+
+Route::get('/tampilanadmin', function () {
+    return view('')
+})
