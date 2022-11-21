@@ -181,7 +181,9 @@ form label{
                 <label for="">Email</label>
                 <input class="input" type="email" name="email" placeholder="Example@gmail.com" required>
                 <label for="">Password</label>
-                <input class="input" type="password" name="password" placeholder="Password" required><br><br>
+                <input class="input" type="password" name="password" placeholder="Password" required>
+                <a href="/register">Create an account</a>
+                <br><br>
                 <input type="submit" class="loginn" value="Login">
             </form>
         </div>
