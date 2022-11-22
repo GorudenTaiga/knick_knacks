@@ -330,24 +330,7 @@ ul li:hover .dropdown li a{
 </style>
 </head>
 <body>
-	<section>
-        <nav>
-            <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
-            <ul>
-                <li><a href="Home.php" class="active">Home</a></li>
-                <li><a href="Product.php">Product</a></li>
-                <li><a href="About.php">About Us</a></li>
-            </ul>
-            <ul class="list">
-                <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
-                <li><img class="user" src="{{ asset('img/user.png') }}"></li>
-                    <ul class="dropdown">
-                        <li><a href="#">Logut</a></li>
-                    </ul>
-            </ul>
-              </nav>
-    </section>
-
+    @include('partials.navbar')
         <div class="text-container">
             <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
