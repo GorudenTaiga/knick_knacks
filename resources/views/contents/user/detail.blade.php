@@ -1,19 +1,15 @@
 @extends('layouts.main')
 @section('content')
+@foreach ($isi as $produk)
 <div class="gambar">
     <div class="foto">
-        <img src="">
+        <img src="{{ asset('foto_produk/'.$produk->image) }}">
     </div>
     <div class="foto">
-        <p>Paket Doremi Kids Nussa Rara<br>
-        <span>Rp 58.000</span></p>
-        <p>DOREMI Kids Shampo Hijab Nussa untuk anak yang diformulasikan dengan proses yang Halal dan mengandung bahan-bahan natural pilihan. Diformulasikan khusus untuk anak yang menggunakan Hijab, yang disesuaikan dengan kebutuhannya.</p>
-        <p>Detail Product :</p>
-        <p>-Hair&Body Wash 200 ml<br>
-        -Shampo+Conditioner 180 ml<br>
-        -Spray Cologne 100 ml<br>
-        -Handsanitizer Gel 20 ml</p>
-        <a href="Keranjang.php" class="beli">Beli</a>
+        <p>{{ $produk->nama }}<br>
+        <span>Rp {{ $produk->harga }}</span></p>
+        <p>{{ $produk->detail }}</p>
     </div>
 </div>
+@endforeach
 @endsection
