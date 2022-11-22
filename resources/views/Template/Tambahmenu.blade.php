@@ -143,11 +143,9 @@ top: 10px;
         <nav>
             <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
             <ul>
-                <li><img class="user" src="user.png"></li>
+                <li><img class="user" src="{{ asset('img/user.png') }}"></li>
             </ul>
               </nav>
     </section>
-
-    
   </body>
 </html>
