@@ -121,7 +121,7 @@ nav ul li a{
     color: #3C38EA;
 }
 .krnjg{
-    position: relative;
+    display: flex;
 width: 100px;
 height: 55.52px;
 left: 100;

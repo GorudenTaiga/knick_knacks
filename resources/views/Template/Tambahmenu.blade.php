@@ -20,17 +20,17 @@ body{
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
- 
+
 section{
     width:100%;
     height:80vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -39,12 +39,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -58,7 +58,7 @@ nav ul li a{
     color: #000000;
     font-size: 40px;
 }
- 
+
 .text-container p:nth-child(2){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -66,7 +66,7 @@ nav ul li a{
     word-spacing: -2px;
     z-index: 2;
 }
- 
+
 .text-container p:nth-child(3){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -90,7 +90,7 @@ nav ul li a{
     font-size: 14px;
     outline: none;
     margin: 0px 10px;
-} 
+}
 .model{
     height: 570px;
     position: absolute;
@@ -136,7 +136,7 @@ left: 100;
 top: 10px;
 }
 
-</style> 
+</style>
 </head>
 <body>
 	<section>
@@ -147,6 +147,7 @@ top: 10px;
             </ul>
               </nav>
     </section>
- 
+
+    
   </body>
 </html>
