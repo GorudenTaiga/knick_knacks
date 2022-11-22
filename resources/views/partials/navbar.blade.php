@@ -1,19 +1,25 @@
-<nav class="nav justify-content-center">
-        <a href="/" class="logo"><span>Knick</span> <span>Knacks</span></a>
+<section>
+    <nav>
+        <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
         <ul>
-            <li><a href="/" class="nav-link active">Home</a></li>
-            <li><a href="/product" class="nav-link">Product</a></li>
-            <li><a href="/about" class="nav-link">About Us</a></li>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/product">Product</a></li>
+            <li><a href="/about">About Us</a></li>
         </ul>
-        <ul>
-            <li><a href="/cart"><img class="krnjg" src="img/krnjg.png" style="max-width:90px"></a></li>
-            <li>
-                @auth
-                    <a href="/logout" style="font-size: 15px;">{{ Auth::user()->name }}</a>
-                @endauth
-                @guest
-                    <a href="/login">Login</a>
-                @endguest
-            </li>
+        <ul class="list">
+            @auth
+            <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
+            <ul class="dropdown">
+                <li><a href="#">{{ Auth::user()->name }}</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            @endauth
+            @guest
+            <ul class="dropdown">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+            @endguest
         </ul>
-    </nav>
+          </nav>
+</section>
