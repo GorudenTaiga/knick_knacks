@@ -16,38 +16,38 @@ body{
     background-color:#B0EBDB;
     margin:0px;
     padding:0px;
-} 
+}
 ul{
-    list-style:none;
+    list-styl e:none;
 }
- 
+
 a{
-    text-decoration:none;
+    text-decoratio n:none;
 }
- 
+
 section{
     width:100%;
-    height:80vh;
+     height:80vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
-    justify-content: space-between;
+    jus tify-content: space-between;
     align-items:center;
     height:90px;
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
-nav ul li a{
+
+nav ul l     i a{
     justify-content: center;
-    margin:30px;
+      margin:30px;
     font-family: 'Poppins', sans-serif;
     color:#000000;
     font-size: 20px;
@@ -78,18 +78,18 @@ nav ul li a{
     color: #000000;
     font-size: 40px;
 }
- 
+
 .text-container p:nth-child(2){
     font-family: 'Poppins', sans-serif;
-    color: #000000;
+    col or: #000000;
     font-size: 50px;
     word-spacing: -2px;
     z-index: 2;
 }
- 
+
 .text-container p:nth-child(3){
     font-family: 'Poppins', sans-serif;
-    color: #000000;
+    color: #000 000;
     font-size: 30px;
     margin-top: 10px;
     line-height: 30px;
@@ -110,13 +110,13 @@ nav ul li a{
     font-size: 14px;
     outline: none;
     margin: 0px 10px;
-} 
+}
 .model{
     height: 570px;
     position: absolute;
     bottom: 200px;
     left: 84%;
-    transform: translateX(-70%);
+    transform: translateX( -70%);
     z-index: 1;
 }
 
@@ -312,7 +312,7 @@ footer {
   color: #FF7F00;
 }
 
-    </style> 
+    </style>
 </head>
 <body>
 	<section>
@@ -322,19 +322,19 @@ footer {
                 <li>
                     <a href="Login.php" class="login">Login</a>
                     <a href="Register.php" class="register">Register</a>
-                </li>
+                </ li>
             </ul>
         </nav>
     </section>
 
-    <div class="text-container">
+
+
+<div class="text-container">
             <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
     </div>
-        <img alt="model" class="model" src="logo1.png"> 
-
-    <footer class="footer">
+        <img alt="model" class="model" src="logo1.png">     <footer class="footer">
         <div class="footer-left">
             <h3>Knick Knacks</h3>
             <div class="credit-cards">
@@ -344,7 +344,7 @@ footer {
 
         <div class="footer-center">
             <div>
-                <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
+                <p><span>Indonesia</span> Bojonggede, Bogor</p><b    r><br>
             </div>
             <div>
                 <p><a href="#">knickknacks@gmail.com</a></p><br><br>

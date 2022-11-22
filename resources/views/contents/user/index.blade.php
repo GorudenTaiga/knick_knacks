@@ -96,8 +96,7 @@ nav ul li a{
 .model{
     height: 570px;
     position: absolute;
-    bottom: 200px;
-    left: 84%;
+    left: 90%;
     transform: translateX(-70%);
     z-index: 1;
 }
@@ -325,92 +324,61 @@ ul li:hover .dropdown li a{
     border-radius: 5px;
     margin-bottom: 5px;
 }
-
-
 </style>
 </head>
 <body>
-	<section>
-        <nav>
-            <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
-            <ul>
-                <li><a href="Home.php" class="active">Home</a></li>
-                <li><a href="Product.php">Product</a></li>
-                <li><a href="About.php">About Us</a></li>
-            </ul>
-            <ul>
-                <li><a href="Keranjang.php"><img class="krnjg" src="krnjg.png"></a></li>
-                <li><img class="user" src="user.png">
-                    <ul class="dropdown">
-                        <li><a href="#">Log out</a></li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </li>
-            </ul>
-              </nav>
-    </section>
-
-        <div class="text-container">
-            <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
-            <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
-            <p>Make your child enjoy the time</p><br>
+    <div class="text-container">
+        <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
+        <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
+        <p>Make your child enjoy the time</p><br>
+    </div>
+    <img alt="model" class="model" src="img/logo1.png">
+{{-- <footer class="footer">
+    <div class="footer-left">
+        <h3>Knick Knacks</h3>
+        <div class="credit-cards">
+            <img src="logo.jpeg">
         </div>
-        <img alt="model" class="model" src="logo1.png">
-
-    <footer class="footer">
-        <div class="footer-left">
-            <h3>Knick Knacks</h3>
-            <div class="credit-cards">
-                <img src="logo.jpeg">
+    </div>
+    <div class="footer-center">
+        <div>
+            <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
+            <p><a href="#">knickknacks@gmail.com</a></p><br><br>
+        </div>
+        <div class="wrapper">
+            <div class="button">
+               <div class="icon"><a href="https://facebook.com/" target="_blank">
+                  <i class="fa fa-facebook-f"></i>
+               </div>
+               <span>Facebook</span>
+            </div>
+            <div class="button">
+               <div class="icon"><a href="https://www.instagram.com/tokogrosirkosmetikmurah/" target="_blank">
+                  <i class="fa fa-instagram" ></i>
+               </div>
+               <span>Instagram</span></a>
+            </div>
+            <div class="button">
+               <div class="icon"><a href="https://shopee.co.id/search?keyword=tokoknickknacks" target="_blank">
+                  <i class="fa fa-shopping-cart"></i>
+               </div>
+               <span>Shopee</span></a>
+            </div>
+            <div class="button">
+               <div class="icon"><a href="https://goo.gl/maps/RTHx6rGEe8c8yiyV8" target="_blank">
+                <i class="fa fa-map"></i>
+               </div>
+               <span>Maps</span></a>
             </div>
         </div>
-
-        <div class="footer-center">
-            <div>
-                <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
-                <p><a href="#">knickknacks@gmail.com</a></p><br><br>
-            </div>
-
-            <div class="wrapper">
-
-                <div class="button">
-                   <div class="icon"><a href="https://facebook.com/" target="_blank">
-                      <i class="fa fa-facebook-f"></i>
-                   </div>
-                   <span>Facebook</span>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://www.instagram.com/tokogrosirkosmetikmurah/" target="_blank">
-                      <i class="fa fa-instagram" ></i>
-                   </div>
-                   <span>Instagram</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://shopee.co.id/search?keyword=tokoknickknacks" target="_blank">
-                      <i class="fa fa-shopping-cart"></i>
-                   </div>
-                   <span>Shopee</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://goo.gl/maps/RTHx6rGEe8c8yiyV8" target="_blank">
-
-                    <i class="fa fa-map"></i>
-                   </div>
-                   <span>Maps</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-right">
-            <p class="footer-about">
-                <span>About</span>
-                Knick Knacks menjual produk peralatan mandi dalam bentuk paket. Banyak gambar kartun lucu yang tentunya disukai oleh anak anda. Ayo ibu bahagiakan si buah hati.
-            </p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-right">
+        <p class="footer-about">
+            <span>About</span>
+            Knick Knacks menjual produk peralatan mandi dalam bentuk paket. Banyak gambar kartun lucu yang tentunya disukai oleh anak anda. Ayo ibu bahagiakan si buah hati.
+        </p>
+    </div>
+</footer> --}}
 </body>
 </html>
 @endsection

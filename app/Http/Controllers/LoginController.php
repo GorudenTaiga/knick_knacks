@@ -21,6 +21,7 @@ class LoginController extends Controller
         $user = new \App\Models\User;
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->level = $request->level;
         $user->password = bcrypt($request->password);
         $user->remember_token = Str::random(20);
         $user->alamat = $request->alamat;
