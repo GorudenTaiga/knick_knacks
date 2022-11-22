@@ -338,7 +338,7 @@ ul li:hover .dropdown li a{
             </ul>
             <ul>
                 <li><a href="Keranjang.php"><img class="krnjg" src="krnjg.png"></a></li>
-                <li><img class="user" src="user.png">
+                <li><img class="user" src="{{ asset('img/user.png') }}">
                     <ul class="dropdown">
                         <li><a href="#">Log out</a></li>
                         <li><a href="#">Log out</a></li>
