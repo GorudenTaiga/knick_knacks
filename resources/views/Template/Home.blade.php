@@ -56,13 +56,13 @@ nav ul li a{
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .text-container p:nth-child(2){
     font-family: 'Poppins', sans-serif;
     color: #000000;
-    font-size: 50px;
+    font-size: 40px;
     word-spacing: -2px;
     z-index: 2;
 }
@@ -70,7 +70,7 @@ nav ul li a{
 .text-container p:nth-child(3){
     font-family: 'Poppins', sans-serif;
     color: #000000;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 10px;
     line-height: 30px;
 }
@@ -92,7 +92,7 @@ nav ul li a{
     margin: 0px 10px;
 }
 .model{
-    height: 570px;
+    height: 450px;
     position: absolute;
     bottom: 200px;
     left: 84%;
@@ -142,13 +142,13 @@ footer {
 }
 
 .footer {
-    background-color: #040a18;
+    background-color: #000;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: bold 16px sans-serif;
-    padding: 50px 50px 40px 50px;
-    margin-top: 80px;
+    padding: 40px 40px 30px 40px;
+    margin-top: 90px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -170,12 +170,12 @@ footer {
 }
 
 .footer .footer-left {
-    width: 30%;
+    width: 35%;
 }
 
 .footer h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     color: #f5f5f5;
     margin: 0;
     padding-bottom: 20px;
@@ -204,7 +204,7 @@ footer {
 .footer .footer-center p span {
     display: block;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .footer .footer-right {
@@ -213,7 +213,7 @@ footer {
 
 .footer .footer-about {
     color: #92999f;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: normal;
     margin: 0px;
 }
@@ -221,11 +221,11 @@ footer {
 .footer .footer-about span {
     display: block;
     color: #ffffff;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-@media (max-width: 880px) {
+@media (max-width: 800px) {
 
     .footer .footer-left,
     .footer .footer-center,
@@ -336,14 +336,12 @@ ul li:hover .dropdown li a{
                 <li><a href="Product.php">Product</a></li>
                 <li><a href="About.php">About Us</a></li>
             </ul>
-            <ul>
-                <li><a href="Keranjang.php"><img class="krnjg" src="krnjg.png"></a></li>
-                <li><img class="user" src="{{ asset('img/user.png') }}">
+            <ul class="list">
+                <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
+                <li><img class="user" src="{{ asset('img/user.png') }}"></li>
                     <ul class="dropdown">
-                        <li><a href="#">Log out</a></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="#">Logut</a></li>
                     </ul>
-                </li>
             </ul>
               </nav>
     </section>
@@ -353,20 +351,19 @@ ul li:hover .dropdown li a{
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
         </div>
-        <img alt="model" class="model" src="logo1.png">
+        <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
 
     <footer class="footer">
         <div class="footer-left">
             <h3>Knick Knacks</h3>
             <div class="credit-cards">
-                <img src="logo.jpeg">
+                <img src="{{ asset('img/logo.jpeg') }}">
             </div>
         </div>
 
         <div class="footer-center">
             <div>
                 <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
-                <p><a href="#">knickknacks@gmail.com</a></p><br><br>
             </div>
 
             <div class="wrapper">
