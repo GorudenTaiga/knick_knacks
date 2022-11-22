@@ -137,6 +137,14 @@ height: 38.09px;
 left: 100;
 top: 10px;
 }
+.row g-3r{
+    justify-content: center;
+    max-width: 100%;
+    width: 80%;
+    padding-right: 20px;
+    border-radius: 15px;
+
+}
 
 </style>
 </head>

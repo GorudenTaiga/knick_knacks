@@ -67,7 +67,7 @@ Route::prefix('/template')->group(function () {
     Route::get('/', function () {
         return view('Template.Home');
     });
-    Route::get('/produk', function () {
-        return view('Template.PaketnussaA');
+    Route::get('/admin', function () {
+        return view('tambah');
     });
 });
