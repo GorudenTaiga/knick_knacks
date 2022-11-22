@@ -173,7 +173,7 @@ position: inline-block;
 background: grey;
 color: #FFF;
 }
-.user{
+.user {
 position: relative;
 width: 35px;
 height: 38.09px;
@@ -190,7 +190,7 @@ top: 10px;
             <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
             <ul>
               <li><a href="/admin/tambah" class="menu">Tambah Menu</a></li>
-              <li><img class="user" src="user.png"></li>
+              <li><a href="/logout"><img class="user" src="{{ asset('img/user.png') }}"> | {{ Auth::user()->name }}</a></li>
             </ul>
         </nav>
     </section>

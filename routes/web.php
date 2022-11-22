@@ -62,3 +62,12 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect('/');
 });
+
+Route::prefix('/template')->group(function () {
+    Route::get('/', function () {
+        return view('Template.Home');
+    });
+    Route::get('/produk', function () {
+        return view('Template.PaketnussaA');
+    });
+});
