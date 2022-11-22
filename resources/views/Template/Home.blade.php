@@ -306,22 +306,56 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
-ul li dropdown{
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    z-index: 2;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    transition: all 0.5s ease;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
     display: none;
-}
-ul li:hover .dropdown{
-    display: block;
-    background: black;
     position: absolute;
-    padding: 10px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
-ul li:hover .dropdown li{
+
+.dropdown-content a {
+    color: black;
+    width: 40px;
+    padding: 10px 10px;
+    text-decoration: none;
     display: block;
+    text-align: left;
 }
-ul li:hover .dropdown li a{
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 
@@ -338,10 +372,14 @@ ul li:hover .dropdown li a{
             </ul>
             <ul class="list">
                 <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
-                <li><img class="user" src="{{ asset('img/user.png') }}"></li>
-                    <ul class="dropdown">
-                        <li><a href="#">Logut</a></li>
-                    </ul>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><img class="user" src="{{ asset('img/user.png') }}"></a>
+                    <div class="dropdown-content">
+                        <a href="#">Web Design</a>
+                        <a href="#">App Design</a>
+                        <a href="#">Graphic Design</a>
+                    </div>
+                </li>
             </ul>
               </nav>
     </section>
