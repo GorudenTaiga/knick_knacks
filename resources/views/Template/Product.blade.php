@@ -16,21 +16,21 @@ body{
     margin:0px;
     padding:0px;
 }
- 
+
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
- 
+
 section{
     width:100%;
     height:15vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -39,12 +39,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -67,10 +67,10 @@ nav ul li a{
     color: #3C38EA;
 }
 .gambar{
-    width: 80%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: auto; 
+    margin: auto;
     margin-bottom: 0;
 }
 .gambar .foto img{
@@ -319,7 +319,7 @@ footer {
         </div>
     </div>
 
-    
+
     <footer class="footer">
         <div class="footer-left">
             <h3>Knick Knacks</h3>

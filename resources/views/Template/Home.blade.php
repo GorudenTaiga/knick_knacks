@@ -20,10 +20,11 @@ body{
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
+
 section{
     width:100%;
     height:80vh;
