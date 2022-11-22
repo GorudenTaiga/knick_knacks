@@ -323,7 +323,6 @@ li a,
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 20px 16px;
     text-decoration: none;
 }
 
@@ -339,25 +338,27 @@ li.dropdown {
 .dropdown-content {
     display: none;
     position: absolute;
+    width: 5%;
+    height: 5%;
     background-color: #f9f9f9;
+    border-radius: 10px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 2;
 }
 
 .dropdown-content a {
     color: black;
-    width: 40px;
+    display: block;
+    width: 20px;
     padding: 10px 10px;
     text-decoration: none;
-    display: block;
-    text-align: left;
+    font-size: 20px;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 </style>
 </head>
@@ -375,9 +376,8 @@ li.dropdown {
                 <li class="dropdown">
                     <a href="javascript:void(0)" class="dropbtn"><img class="user" src="{{ asset('img/user.png') }}"></a>
                     <div class="dropdown-content">
-                        <a href="#">Web Design</a>
-                        <a href="#">App Design</a>
-                        <a href="#">Graphic Design</a>
+                        <a href="#">Log out</a>
+                        <a href="#">App </a>
                     </div>
                 </li>
             </ul>
