@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::prefix('/user')->group(function () {
         Route::get('/');
-        Route::get('/cart');
+        Route::get('/cart', )->name('cart');
         Route::get('/checkout');
     });
 
