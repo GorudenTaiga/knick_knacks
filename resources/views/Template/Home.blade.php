@@ -24,13 +24,12 @@ ul{
 a{
     text-decoration:none;
 }
- 
 section{
     width:100%;
     height:80vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -39,12 +38,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -58,7 +57,7 @@ nav ul li a{
     color: #000000;
     font-size: 40px;
 }
- 
+
 .text-container p:nth-child(2){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -66,7 +65,7 @@ nav ul li a{
     word-spacing: -2px;
     z-index: 2;
 }
- 
+
 .text-container p:nth-child(3){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -90,7 +89,7 @@ nav ul li a{
     font-size: 14px;
     outline: none;
     margin: 0px 10px;
-} 
+}
 .model{
     height: 570px;
     position: absolute;
@@ -306,8 +305,26 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
+ul li dropdown{
+    display: none;
+}
+ul li:hover .dropdown{
+    display: block;
+    background: black;
+    position: absolute;
+    padding: 10px;
+}
+ul li:hover .dropdown li{
+    display: block;
+}
+ul li:hover .dropdown li a{
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
 
-</style> 
+
+</style>
 </head>
 <body>
 	<section>
@@ -320,18 +337,23 @@ footer {
             </ul>
             <ul>
                 <li><a href="Keranjang.php"><img class="krnjg" src="krnjg.png"></a></li>
-                <li><img class="user" src="user.png"></li>
+                <li><img class="user" src="user.png">
+                    <ul class="dropdown">
+                        <li><a href="#">Log out</a></li>
+                        <li><a href="#">Log out</a></li>
+                    </ul>
+                </li>
             </ul>
               </nav>
     </section>
- 
+
         <div class="text-container">
             <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
         </div>
-        <img alt="model" class="model" src="logo1.png"> 
-        
+        <img alt="model" class="model" src="logo1.png">
+
     <footer class="footer">
         <div class="footer-left">
             <h3>Knick Knacks</h3>
