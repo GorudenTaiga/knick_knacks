@@ -94,7 +94,7 @@ nav ul li a{
 .model{
     height: 450px;
     position: absolute;
-    bottom: 200px;
+    top: 20%;
     left: 84%;
     transform: translateX(-70%);
     z-index: 1;
@@ -320,7 +320,7 @@ li {
 
 li a,
 .dropbtn {
-    display: inline-block;
+    display: block;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -332,7 +332,7 @@ li a:hover,
 }
 
 li.dropdown {
-    display: inline-block;
+    display: block;
 }
 
 .dropdown-content {
@@ -351,7 +351,6 @@ li.dropdown {
     color: black;
     display: block;
     width: 20px;
-    padding: 10px 10px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -377,7 +376,7 @@ li.dropdown {
                     <a href="javascript:void(0)" class="dropbtn"><img class="user" src="{{ asset('img/user.png') }}"></a>
                     <div class="dropdown-content">
                         <a href="#">Log out</a>
-                        <a href="#">App </a>
+                        <a href="#">Log out</a>
                     </div>
                 </li>
             </ul>
@@ -389,7 +388,12 @@ li.dropdown {
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
         </div>
-        <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
+        <picture>
+            <source media="(max-width:1000px)" srcset="logo1-large.png">
+            <source media="(max-width:600px)" srcset="logo1-medium.png">
+            <source media="(max-width:400px)" srcset="logo1-small.png">
+            <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
+        </picture>
 
     <footer class="footer">
         <div class="footer-left">
