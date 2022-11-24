@@ -96,7 +96,7 @@ nav ul li a{
 .model{
     height: 450px;
     position: absolute;
-    bottom: 200px;
+    top: 20%;
     left: 84%;
     transform: translateX(-70%);
     z-index: 1;
@@ -308,35 +308,95 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
-ul li dropdown{
-    display: none;
-}
-ul li:hover .dropdown{
-    display: block;
-    background: black;
-    position: absolute;
-    padding: 10px;
-}
-ul li:hover .dropdown li{
-    display: block;
-}
-ul li:hover .dropdown li a{
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
+li {
+    float: left;
+    z-index: 2;
+}
+
+li a,
+.dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    transition: all 0.5s ease;
+}
+
+li.dropdown {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.dropdown-content a {
+    color: black;
+    display: block;
+    width: 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 </style>
 </head>
 <body>
     @include('partials.navbar')
+	{{-- <section>
+        <nav>
+            <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
+            <ul>
+                <li><a href="Home.php" class="active">Home</a></li>
+                <li><a href="Product.php">Product</a></li>
+                <li><a href="About.php">About Us</a></li>
+            </ul>
+            <ul class="list">
+                <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><img class="user" src="{{ asset('img/user.png') }}"></a>
+                    <div class="dropdown-content">
+                        <a href="#">Log out</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </li>
+            </ul>
+              </nav>
+    </section> --}}
+
         <div class="text-container">
             <p>Welcome To <span>Knick</span> <span>Knacks</span></p>
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
         </div>
-        <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
+        <picture>
+            <source media="(max-width:1000px)" srcset="logo1-large.png">
+            <source media="(max-width:600px)" srcset="logo1-medium.png">
+            <source media="(max-width:400px)" srcset="logo1-small.png">
+            <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
+        </picture>
 
     <footer class="footer">
         <div class="footer-left">

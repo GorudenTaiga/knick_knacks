@@ -155,8 +155,13 @@ top: 10px;
     <label for="validationCustom01" class="form-label">Nama Barang</label>
     <input type="text" class="form-control" id="validationCustom01" name="nama" required>
   </div>
-  <input type="text" name="detail" id="">
+  <span>Detail</span>
+  <textarea name="detail" id="" cols="30" rows="10"></textarea>
+  <br>
+  <label for="">Harga</label>
   <input type="number" name="harga" id="">
+  <br>
+  <label for="">Stok</label>
   <input type="number" name="stok" id="">
   <div class="col-md-4">
     <label for="image" class="form-label">Inputkan File</label>

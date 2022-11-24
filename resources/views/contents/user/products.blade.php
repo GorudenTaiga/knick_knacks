@@ -283,26 +283,13 @@ footer {
     </style>
 </head>
 <body>
-	<section>
-        <nav>
-            <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
-            <ul>
-                <li><a href="Home.php" class="active">Home</a></li>
-                <li><a href="Product.php">Product</a></li>
-                <li><a href="About.php">About Us</a></li>
-            </ul>
-            <ul>
-                <li><a href="Keranjang.php"><img class="krnjg" src="krnjg.png"></a></li>
-                <li><img class="user" src="user.png"></li>
-            </ul>
-        </nav>
-    </section>
+	@include('partials.navbar')
 
     <div class="gambar">
         @foreach ($isi as $produk)
         <div class="foto">
-            <a href="/product/{{ $produk->id }}" img src="{{ asset('foto_produk/'.$produk->image) }}"></a>
-            <p>{{ $produk->nama }}<br>Harga {{ $produk->harga }}</p>
+            <a href="/product/{{ $produk->id }}"><img src="{{ asset('foto_produk/'.$produk->image) }}">
+            <p>{{ $produk->nama }}<br>Rp. {{ $produk->harga }}</p></a>
         </div>
         @endforeach
     </div>
