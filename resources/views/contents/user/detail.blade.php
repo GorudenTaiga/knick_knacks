@@ -131,7 +131,58 @@ height: 38.09px;
 left: 100;
 top: 10px;
 }
+.foto p{
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+}
+.loginn{
+height: 45px;
+margin: 30px 0;
+}
+.loginn{
+outline: none;
+padding: 12px 100px;
+width: 200px;
+color: #FFF;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+cursor: pointer;
+margin: 50px;
+border-radius: 10px;
+letter-spacing: 1px;
+background: #009B71;
+}
 
+.loginn:hover{
+background: grey;
+color: #FFF;
+}
+
+.hapus{
+height: 45px;
+margin: 30px 0;
+}
+.hapus{
+outline: none;
+padding: 12px 87px;
+width: 200px;
+color: #FFF;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+cursor: pointer;
+margin: 50px;
+border-radius: 10px;
+letter-spacing: 1px;
+background: #E20000;
+}
+
+.hapus:hover{
+background: grey;
+color: #FFF;
+}
+p {
+    white-space:pre-line;
+}
 
 </style>
 @include('contents.style-navbar')
@@ -144,10 +195,14 @@ top: 10px;
     		<img src="{{ asset('foto_produk/'.$produk->image) }}">
     	</div>
         <div class="foto">
-            <p>{{ $produk->nama }}<br>
-            <span>Rp {{ $produk->harga }}</span></p>
+            <h1>{{ $produk->nama }}</h1><br>
+            <span>Rp {{ $produk->harga }}</span>
             <p>{{ $produk->detail }}</p>
+            @if (Auth::user()->level == 'user')
             <a href="/cart" class="beli">Beli</a>
+            @else
+            <p><a href="admin/{{ $produk->id }}/edit" class="loginn">EDIT</a><br><br><a href="admin/{{ $produk->id }}/hapus" class="hapus">HAPUS</a></p>
+            @endif
         </div>
     </div>
     @endforeach
