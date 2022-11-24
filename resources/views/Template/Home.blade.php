@@ -39,20 +39,61 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-
 }
 nav ul{
+    margin: 0px;
+    padding: 5px;
+    background: none;
+    float: right;
     display: flex;
 }
 
+nav ul li{
+  list-style: none;
+  display: inline-block;
+}
+
 nav ul li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
     justify-content: center;
-    margin:30px;
     font-family: 'Poppins', sans-serif;
-    color:#000000;
+    color:#000;
     font-size: 25px;
     font-weight:700;
 }
+nav ul li a:hover{
+  display: block;
+  color: 000;
+  background: #D9D9D9;
+}
+nav ul li .dropdown{
+  display: none;
+}
+nav ul li:hover .dropdown{
+  display: block;
+  background: white;
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 15px;
+  z-index: 2;
+}
+nav ul li .dropdown li a{
+    font-size: 15px;
+}
+nav ul li:hover .dropdown li{
+  display: block;
+}
+nav ul li:hover .dropdown li a{
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+nav ul li:hover .dropdown li a:hover{
+  background: white;
+  color: black;
+}
+
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -94,7 +135,7 @@ nav ul li a{
 .model{
     height: 450px;
     position: absolute;
-    top: 20%;
+    bottom: 200px;
     left: 84%;
     transform: translateX(-70%);
     z-index: 1;
@@ -148,7 +189,7 @@ footer {
     text-align: left;
     font: bold 16px sans-serif;
     padding: 40px 40px 30px 40px;
-    margin-top: 90px;
+    margin-top: 80px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -225,7 +266,7 @@ footer {
     font-weight: bold;
     margin-bottom: 20px;
 }
-@media (max-width: 800px) {
+@media (max-width: 880px) {
 
     .footer .footer-left,
     .footer .footer-center,
@@ -306,58 +347,38 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    z-index: 2;
-}
-
 li a,
 .dropbtn {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
+    padding: 5px 10px;
     text-decoration: none;
 }
-
-li a:hover,
-.dropdown:hover .dropbtn {
-    transition: all 0.5s ease;
-}
-
 li.dropdown {
-    display: block;
+    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    width: 5%;
-    height: 5%;
     background-color: #f9f9f9;
-    border-radius: 10px;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    height: 5%;
+    width: 10%;
     z-index: 2;
 }
 
 .dropdown-content a {
     color: black;
-    display: block;
-    width: 20px;
     text-decoration: none;
-    font-size: 20px;
+    display: flex;
+    text-align: left;
 }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 
 </style>
 </head>
@@ -370,14 +391,12 @@ li.dropdown {
                 <li><a href="Product.php">Product</a></li>
                 <li><a href="About.php">About Us</a></li>
             </ul>
-            <ul class="list">
+            <ul>
                 <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn"><img class="user" src="{{ asset('img/user.png') }}"></a>
-                    <div class="dropdown-content">
-                        <a href="#">Log out</a>
-                        <a href="#">Log out</a>
-                    </div>
+                <li><a href="#"><img class="user" src="{{ asset('img/user.png') }}"></a>
+                  <ul class="dropdown">
+                    <li><a href="#">Log Out</a></li>
+                  </ul>
                 </li>
             </ul>
               </nav>
@@ -388,12 +407,7 @@ li.dropdown {
             <p>Here we provide a lot of products<br>for children at relatively Cheap Prices</p>
             <p>Make your child enjoy the time</p><br>
         </div>
-        <picture>
-            <source media="(max-width:1000px)" srcset="logo1-large.png">
-            <source media="(max-width:600px)" srcset="logo1-medium.png">
-            <source media="(max-width:400px)" srcset="logo1-small.png">
-            <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
-        </picture>
+        <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
 
     <footer class="footer">
         <div class="footer-left">
