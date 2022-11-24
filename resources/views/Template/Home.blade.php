@@ -133,9 +133,9 @@ nav ul li:hover .dropdown li a:hover{
     margin: 0px 10px;
 }
 .model{
-    height: 450px;
+    height: 400px;
     position: absolute;
-    bottom: 200px;
+    bottom: 190px;
     left: 84%;
     transform: translateX(-70%);
     z-index: 1;
@@ -395,6 +395,7 @@ li.dropdown {
                 <li><a href="Keranjang.php"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
                 <li><a href="#"><img class="user" src="{{ asset('img/user.png') }}"></a>
                   <ul class="dropdown">
+                    <li><a href="#">Log Out</a></li>
                     <li><a href="#">Log Out</a></li>
                   </ul>
                 </li>
