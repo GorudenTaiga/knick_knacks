@@ -26,35 +26,6 @@ ul{
 a{
     text-decoration:none;
 }
-
-section{
-    width:100%;
-    height:80vh;
-    position: relative;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    height:90px;
-    background-color:#D9D9D9;
-    box-shadow:2px 2px 12px rgba(0,0,0,0.2);
-    padding:0px 5%;
-
-}
-nav ul{
-    display: flex;
-}
-
-nav ul li a{
-    justify-content: center;
-    margin:30px;
-    font-family: 'Poppins', sans-serif;
-    color:#000000;
-    font-size: 25px;
-    font-weight:700;
-}
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -145,8 +116,8 @@ top: 10px;
     border-radius: 15px;
 
 }
-
 </style>
+@include('contents.style-navbar')
 </head>
 <body>
 <form class="row g-3" method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">

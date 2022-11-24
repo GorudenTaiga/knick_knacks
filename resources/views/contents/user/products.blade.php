@@ -18,43 +18,6 @@ body{
     margin:0px;
     padding:0px;
 }
-
-ul{
-    list-style:none;
-}
-
-a{
-    text-decoration:none;
-}
-
-section{
-    width:100%;
-    height:15vh;
-    position: relative;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    height:90px;
-    background-color:#D9D9D9;
-    box-shadow:2px 2px 12px rgba(0,0,0,0.2);
-    padding:0px 5%;
-
-}
-nav ul{
-    display: flex;
-}
-
-nav ul li a{
-    justify-content: center;
-    margin:30px;
-    font-family: 'Poppins', sans-serif;
-    color:#000000;
-    font-size: 25px;
-    font-weight:700;
-}
 .logo{
     font-family: 'Poppins', sans-serif;
     color:#000000;
@@ -276,15 +239,11 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
-
-
-
-
-    </style>
+</style>
+@include('contents.style-navbar')
 </head>
 <body>
 	@include('partials.navbar')
-
     <div class="gambar">
         @foreach ($isi as $produk)
         <div class="foto">
@@ -293,65 +252,6 @@ footer {
         </div>
         @endforeach
     </div>
-
-
-    <footer class="footer">
-        <div class="footer-left">
-            <h3>Knick Knacks</h3>
-            <div class="credit-cards">
-                <img src="logo.jpeg">
-            </div>
-        </div>
-
-        <div class="footer-center">
-            <div>
-                <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
-            </div>
-            <div>
-                <p><a href="#">knickknacks@gmail.com</a></p><br><br>
-            </div>
-
-            <div class="wrapper">
-
-                <div class="button">
-                   <div class="icon"><a href="https://facebook.com/" target="_blank">
-                      <i class="fa fa-facebook-f"></i>
-                   </div>
-                   <span>Facebook</span>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://www.instagram.com/tokogrosirkosmetikmurah/" target="_blank">
-                      <i class="fa fa-instagram" ></i>
-                   </div>
-                   <span>Instagram</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://shopee.co.id/search?keyword=tokoknickknacks" target="_blank">
-                      <i class="fa fa-shopping-cart"></i>
-                   </div>
-                   <span>Shopee</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://goo.gl/maps/RTHx6rGEe8c8yiyV8" target="_blank">
-
-                    <i class="fa fa-map"></i>
-                   </div>
-                   <span>Maps</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-right">
-            <p class="footer-about">
-                <span>About</span>
-                Knick Knacks menjual produk peralatan mandi dalam bentuk paket. Banyak gambar kartun lucu yang tentunya disukai oleh anak anda. Ayo ibu bahagiakan si buah hati.
-            </p>
-        </div>
-    </div>
-    </footer>
 </body>
 </html>
 @endsection

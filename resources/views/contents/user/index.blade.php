@@ -19,42 +19,6 @@ body{
     margin:0px;
     padding:0px;
 }
-ul{
-    list-style:none;
-}
-
-a{
-    text-decoration:none;
-}
-
-section{
-    width:100%;
-    height:80vh;
-    position: relative;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    height:90px;
-    background-color:#D9D9D9;
-    box-shadow:2px 2px 12px rgba(0,0,0,0.2);
-    padding:0px 5%;
-
-}
-nav ul{
-    display: flex;
-}
-
-nav ul li a{
-    justify-content: center;
-    margin:30px;
-    font-family: 'Poppins', sans-serif;
-    color:#000000;
-    font-size: 25px;
-    font-weight:700;
-}
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -308,60 +272,8 @@ footer {
 .wrapper .button:nth-child(4) span{
   color: #FF7F00;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    z-index: 2;
-}
-
-li a,
-.dropbtn {
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
-
-li a:hover,
-.dropdown:hover .dropbtn {
-    transition: all 0.5s ease;
-}
-
-li.dropdown {
-    display: block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 5%;
-    height: 5%;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-}
-
-.dropdown-content a {
-    color: black;
-    display: block;
-    width: 20px;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 </style>
+@include('contents.style-navbar')
 </head>
 <body>
     @include('partials.navbar')
@@ -397,60 +309,6 @@ li.dropdown {
             <source media="(max-width:400px)" srcset="logo1-small.png">
             <img alt="model" class="model" src="{{ asset('img/logo1.png') }}">
         </picture>
-
-    <footer class="footer">
-        <div class="footer-left">
-            <h3>Knick Knacks</h3>
-            <div class="credit-cards">
-                <img src="{{ asset('img/logo.jpeg') }}">
-            </div>
-        </div>
-
-        <div class="footer-center">
-            <div>
-                <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
-            </div>
-
-            <div class="wrapper">
-
-                <div class="button">
-                   <div class="icon"><a href="https://facebook.com/" target="_blank">
-                      <i class="fa fa-facebook-f"></i>
-                   </div>
-                   <span>Facebook</span>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://www.instagram.com/tokogrosirkosmetikmurah/" target="_blank">
-                      <i class="fa fa-instagram" ></i>
-                   </div>
-                   <span>Instagram</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://shopee.co.id/search?keyword=tokoknickknacks" target="_blank">
-                      <i class="fa fa-shopping-cart"></i>
-                   </div>
-                   <span>Shopee</span></a>
-                </div>
-
-                <div class="button">
-                   <div class="icon"><a href="https://goo.gl/maps/RTHx6rGEe8c8yiyV8" target="_blank">
-
-                    <i class="fa fa-map"></i>
-                   </div>
-                   <span>Maps</span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-right">
-            <p class="footer-about">
-                <span>About</span>
-                Knick Knacks menjual produk peralatan mandi dalam bentuk paket. Banyak gambar kartun lucu yang tentunya disukai oleh anak anda. Ayo ibu bahagiakan si buah hati.
-            </p>
-        </div>
-    </footer>
 </body>
 </html>
 @endsection

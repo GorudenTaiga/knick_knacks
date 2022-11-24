@@ -134,6 +134,7 @@ top: 10px;
 
 
 </style>
+@include('contents.style-navbar')
 </head>
 <body>
 	@include('partials.navbar')
