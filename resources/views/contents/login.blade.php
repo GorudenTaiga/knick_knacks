@@ -176,6 +176,9 @@ form label{
             <form action="{{ route('postlogin') }}" method="POST">
                 @csrf
                 <h1>Login</h1>
+                @error('email' && 'password')
+                    <p>Email/Password Salah</p>
+                @enderror
                 <hr>
                 <p><span>Toko</span> <span>Knick</span> <span>Knacks</span></p>
                 <label for="">Email</label>

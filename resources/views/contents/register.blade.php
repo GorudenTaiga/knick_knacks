@@ -258,7 +258,7 @@ p{
                     <span class="details">Password</span>
                     <input type="password" placeholder="Password" required name="password">
                 </div>
-                <div>
+                <div class="input-box">
                     <p>Gender</p><br>
                     <label class="radio">Male
                         <input type="radio" checked="checked" name="gender" value="Male">
@@ -266,6 +266,17 @@ p{
                     </label>
                     <label class="radio">Female
                         <input type="radio" checked="checked" name="gender" value="Female">
+                        <span class="check"></span>
+                    </label>
+                </div>
+                <div class="input-box">
+                    <p>Role</p><br>
+                    <label class="radio">Admin
+                        <input type="radio" checked="checked" name="level" value="admin">
+                        <span class="check"></span>
+                    </label>
+                    <label class="radio">User
+                        <input type="radio" checked="checked" name="level" value="user">
                         <span class="check"></span>
                     </label>
                 </div>
