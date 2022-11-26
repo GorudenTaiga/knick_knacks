@@ -42,6 +42,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', [AdminController::class, 'tampil']);
         Route::get('/tambah', [ProdukController::class, 'tambah']);
         Route::post('/tambah', [ProdukController::class, 'store'])->name('simpan');
+        Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [ProdukController::class, 'update'])->name('edit_simpan');
         Route::get('/{id}', [ProdukController::class, 'show'])->name('show');
     });
 });

@@ -41,22 +41,25 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'nama' => 'required',
-            'detail' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
-            'image' => 'required|image|file|mimes:png,jpg,jpeg,gif,svg|max:2048'
+        $image = array();
+        if ($files = $request->file('image')){
+            foreach ($files as $file) {
+                $image_name = md5(rand(1000, 10000));
+                $ext = strtolower($file->getClientOriginalExtension());
+                $image_fullname = $image_name.'.'.$ext;
+                $upload_path = 'public/foto_produk/';
+                $img_url = $upload_path.$image_fullname;
+                $file->move($upload_path, $image_fullname);
+                $image[] = $img_url;
+            }
+        };
+        Produk::insert([
+            'nama' => $request->nama,
+            'detail' => $request->detail,
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'image' => implode('|', $image)
         ]);
-
-        $data = Produk::create($data);
-
-        if ($request->hasFile('image')){
-            $request->file('image')->move('foto_produk/', $request->file('image')->getClientOriginalName());
-            $data->image = $request->file('image')->getClientOriginalName();
-            $data->save();
-        }
-
         return redirect('/admin/tambah');
     }
 
@@ -87,9 +90,11 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produk $produk)
+    public function edit($id)
     {
-        //
+        return view('contents.admin.edit', [
+            'produk' => Produk::where('id', $id)->get()
+        ]);
     }
 
     /**
@@ -99,9 +104,10 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProdukRequest $request, Produk $produk)
+    public function update($id, UpdateProdukRequest $request)
     {
-        //
+        Produk::where('id', $id)->update();
+        return redirect('/admin');
     }
 
     /**

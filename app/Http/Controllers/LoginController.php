@@ -12,7 +12,12 @@ class LoginController extends Controller
     {
         /* dd($request->all()); */
         if(Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/');
+            if (Auth::user()->level == 'user'){
+                return redirect('/');
+            }
+            if (Auth::user()->level == 'admin') {
+                return redirect('/admin');
+            }
         }
         return redirect('/login');
     }

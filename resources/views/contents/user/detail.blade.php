@@ -192,11 +192,17 @@ p {
     @foreach ($isi as $produk)
     <div class="gambar">
     	<div class="foto">
-    		<img src="{{ asset('foto_produk/'.$produk->image) }}">
+            @php
+                $images = explode('|', $produk->image)
+            @endphp
+            @foreach ($images as $foto)
+    		<img src="{{ asset($foto) }}">
+            @endforeach
     	</div>
         <div class="foto">
             <h1>{{ $produk->nama }}</h1><br>
             <span>Rp {{ $produk->harga }}</span>
+            <p>Details : </p>
             <p>{{ $produk->detail }}</p>
             @if (Auth::user()->level == 'user')
             <a href="/cart" class="beli">Beli</a>
