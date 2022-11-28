@@ -72,4 +72,7 @@ Route::prefix('/template')->group(function () {
     Route::get('/admin', function () {
         return view('tambah');
     });
+    Route::get('/produk', function (){
+        return view('Template.Product');
+    });
 });
