@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartModelController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +35,13 @@ Route::group(['middleware' => ['auth']], function () {
     });
     Route::prefix('/user')->group(function () {
         Route::get('/');
-        Route::get('/cart');
+        Route::get('/dashboard', [OrderController::class, 'index']);
+        Route::get('/cart', [CartModelController::class, 'show']);
         Route::get('/checkout');
+        Route::get('/order', [OrderController::class, 'show']);
+        Route::post('/cart', [CartModelController::class, 'post'])->name('cart_simpan');
+        Route::post('/order/post', [OrderController::class, 'order']);
+        Route::post('/order/{id}', [OrderController::class, 'store']);
     });
 
     //Kumpulan Tampilan Admin
@@ -70,5 +78,11 @@ Route::prefix('/template')->group(function () {
     });
     Route::get('/admin', function () {
         return view('tambah');
+    });
+    Route::get('/cart', function () {
+        return view('Template.Keranjang');
+    });
+    Route::get('/order', function () {
+        return view('Template.Pembayaran');
     });
 });

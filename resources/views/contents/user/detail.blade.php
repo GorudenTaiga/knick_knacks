@@ -190,28 +190,34 @@ p {
 <body>
 	@include('partials.navbar')
     @foreach ($isi as $produk)
-    <div class="gambar">
-    	<div class="foto">
-            {{-- @php
-                $images = explode('|', $produk->image)         //Kalau mau banyak gambar
-            @endphp
-            @foreach ($images as $foto)
-    		<img src="{{ asset($foto) }}">
-            @endforeach --}}
-            <img src="{{ asset($produk->image) }}">               {{-- Kalau mau gambarnya 1 aja --}}
-    	</div>
-        <div class="foto">
-            <h1>{{ $produk->nama }}</h1><br>
-            <span>Rp {{ $produk->harga }}</span>
-            <p>Details : </p>
-            <p>{{ $produk->detail }}</p>
-            @if (Auth::user()->level == 'user')
-            <a href="" class="beli">Beli</a>
-            @else
-            <p><a href="admin/{{ $produk->id }}/edit" class="loginn">EDIT</a><br><br><a href="admin/{{ $produk->id }}/hapus" class="hapus">HAPUS</a></p>
-            @endif
+    <form action="{{ route('cart_simpan') }}" method="POST">
+        @csrf
+        <div class="gambar">
+            <div class="foto">
+                {{-- @php
+                    $images = explode('|', $produk->image)         //Kalau mau banyak gambar
+                @endphp
+                @foreach ($images as $foto)
+                <img src="{{ asset($foto) }}">
+                @endforeach --}}
+                <img src="{{ asset($produk->image) }}">               {{-- Kalau mau gambarnya 1 aja --}}
+            </div>
+            <div class="foto">
+                <input type="hidden" name="produkid" value="{{ $produk->id }}">
+                <input type="hidden" name="nama_produk" value="{{ $produk->nama }}">
+                <input type="hidden" name="harga" value="{{ $produk->harga }}">
+                <h1>{{ $produk->nama }}</h1><br>
+                <span>Rp {{ $produk->harga }}</span>
+                <p>Details : </p>
+                <p>{{ $produk->detail }}</p>
+                @if (Auth::user()->level == 'user')
+                <input type="submit" value="Masukkan Keranjang" class="beli" title="Masukkan Keranjang">
+                @else
+                <p><a href="admin/{{ $produk->id }}/edit" class="loginn">EDIT</a><br><br><a href="admin/{{ $produk->id }}/hapus" class="hapus">HAPUS</a></p>
+                @endif
+            </div>
         </div>
-    </div>
+    </form>
     @endforeach
 </body>
 </html>

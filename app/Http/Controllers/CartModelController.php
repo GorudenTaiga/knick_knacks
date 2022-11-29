@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\CartModel;
 use App\Http\Requests\StoreCartModelRequest;
 use App\Http\Requests\UpdateCartModelRequest;
+use App\Models\Produk;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class CartModelController extends Controller
 {
@@ -47,7 +50,9 @@ class CartModelController extends Controller
      */
     public function show(CartModel $cartModel)
     {
-        //
+        return view('contents.user.cart', [
+            'carts' => CartModel::all()
+        ]);
     }
 
     /**
@@ -82,5 +87,22 @@ class CartModelController extends Controller
     public function destroy(CartModel $cartModel)
     {
         //
+    }
+
+    public function post(Request $request)
+    {
+        $produk = Produk::where('id', $request->produkid)->get();
+        foreach ($produk as $produks) {
+        $cart = new CartModel();
+        $cart->userid = Auth::user()->id;
+        $cart->produkid = $request->produkid;
+        $cart->nama_user = Auth::user()->name;
+        $cart->nama_produk = $request->nama_produk;
+        $cart->harga = $request->harga;
+        $cart->image = $produks->image;
+        }
+        $cart->save();
+        return redirect()->back();
+        /* dd($produks->image); */
     }
 }

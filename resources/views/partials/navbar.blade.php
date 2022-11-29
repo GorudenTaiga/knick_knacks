@@ -8,11 +8,11 @@
         </ul>
         @auth
         <ul>
-            <li><a href="/cart"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
+            <li><a href="/user/cart"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
             <li><a href="#"><img class="user" src="{{ asset('img/user.png') }}"></a>
               <ul class="dropdown">
                 <li><a>{{ Auth::user()->name }}</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/user/dashboard">Dashboard</a></li>
                 @if (Auth::user()->level == 'admin')
                 <li><a href="/admin">Tampilan Admin</a></li>
                 @endif
@@ -23,7 +23,7 @@
         @endauth
         @guest
         <ul>
-            <li><a href="/cart"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
+            <li><a href="/user/cart"><img class="krnjg" src="{{ asset('img/krnjg.png') }}"></a></li>
             <li><a href="#"><img class="user" src="{{ asset('img/user.png') }}"></a>
               <ul class="dropdown">
                 <li><a href="/login">Login</a></li>
