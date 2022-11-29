@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Requests;
 use App\Http\Requests\UpdateProdukRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Exists;
 
 class ProdukController extends Controller
 {
@@ -42,13 +43,13 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $image = array();
-        if ($files = $request->file('image')){
+        if ($files = $request->file('image')) {
             foreach ($files as $file) {
                 $image_name = md5(rand(1000, 10000));
                 $ext = strtolower($file->getClientOriginalExtension());
-                $image_fullname = $image_name.'.'.$ext;
+                $image_fullname = $image_name . '.' . $ext;
                 $upload_path = 'public/foto_produk/';
-                $img_url = $upload_path.$image_fullname;
+                $img_url = $upload_path . $image_fullname;
                 $file->move($upload_path, $image_fullname);
                 $image[] = $img_url;
             }
@@ -58,12 +59,13 @@ class ProdukController extends Controller
             'detail' => $request->detail,
             'harga' => $request->harga,
             'stok' => $request->stok,
-            'image' => implode('|', $image)
+            'image' => $img_url /* implode('|', $image) */
         ]);
         return redirect('/admin/tambah');
     }
 
-    public function tambah(){
+    public function tambah()
+    {
         return view('contents.admin.tambah');
     }
 
@@ -75,13 +77,9 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $isi = Produk::where('id', $id)->get();
-        foreach ($isi as $judul){
-            return view('contents.user.detail', [
-                'title' => $judul->nama,
-                'isi' => $isi
-            ]);
-        }
+        return view('contents.user.detail', [
+            'isi' => Produk::where('id', $id)->get()
+        ]);
     }
 
     /**
@@ -106,8 +104,28 @@ class ProdukController extends Controller
      */
     public function update($id, UpdateProdukRequest $request)
     {
-        Produk::where('id', $id)->update();
-        return redirect('/admin');
+        $carigambar = Produk::where('id', $id)->get()->first();
+        if ($file = $request->file('image')) {
+            if ($carigambar->image != '' && $carigambar->image != null) {
+                $file_old = 'public/foto_produk'.$carigambar->image;
+                unlink($file_old);
+            }
+            $image_name = md5(rand(1000, 10000));
+            $ext = strtolower($file->getClientOriginalExtension());
+            $image_fullname = $image_name.'.'.$ext;
+            $path = 'public/foto_produk/';
+            $file->move($path.$image_fullname);
+        }
+        $data = $request->validate([
+            'nama' => 'required',
+            'detail' => 'required',
+            'harga' => 'required',
+            'stok' => 'required',
+            'image' => 'image|required|mimes:png,jpg,jpeg'
+        ]);
+        $update = Produk::where('id',$id)->update($data);
+        if ($update) return redirect('/admin');
+        /* dd($request->all()); */
     }
 
     /**

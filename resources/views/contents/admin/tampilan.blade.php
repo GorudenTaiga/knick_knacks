@@ -198,7 +198,9 @@ top: 10px;
     <div class="gambar">
         @foreach ($isi as $produk)
             <div class="foto">
-                <a href="admin/{{ $produk->id }}"><img src="{{ asset($produk->image) }}"></a>
+                <a href="admin/{{ $produk->id }}"><img src="{{ asset($produk->image) }}">
+                <p></p>
+                </a>
                 <p><a href="admin/edit/{{ $produk->id }}" class="loginn">EDIT</a><br><br><a href="admin/hapus/{{ $produk->id }}" class="hapus">HAPUS</a></p>
             </div>
         @endforeach

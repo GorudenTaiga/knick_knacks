@@ -136,7 +136,7 @@ top: 10px;
   <input type="number" name="stok" id="">
   <div class="col-md-4">
     <label for="image" class="form-label">Inputkan File</label>
-    <input type="file" class="form-control"  name="image[]" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId" multiple="true">
+    <input type="file" class="form-control"  name="image[]" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId">
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
   </div>

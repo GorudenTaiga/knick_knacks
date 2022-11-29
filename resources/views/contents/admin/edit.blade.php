@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -121,26 +120,26 @@ top: 10px;
 </head>
 <body>
     @foreach ($produk as $edit)
-<form class="row g-3" method="POST" action="/admin/edit/{{ $edit['id'] }}" enctype="multipart/form-data">
-    @csrf
-  <div class="col-md-4">
+<form class="row g-3" method="POST" action="/admin/update/{{ $edit['id'] }}">
+    {{ csrf_field() }}
+    <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nama Barang</label>
     <input type="text" class="form-control" id="validationCustom01" name="nama" required value="{{ $edit['nama'] }}">
-  </div>
-  <span>Detail</span>
-  <textarea name="detail" id="" cols="30" rows="10">{{ $edit['detail'] }}</textarea>
-  <br>
-  <label for="">Harga</label>
-  <input type="number" name="harga" id="" value="{{ $edit['harga'] }}">
-  <br>
-  <label for="">Stok</label>
-  <input type="number" name="stok" id="" value="{{ $edit['stok'] }}">
-  <div class="col-md-4">
+    </div>
+    <span>Detail</span>
+    <textarea name="detail" id="" cols="30" rows="10">{{ $edit['detail'] }}</textarea>
+    <br>
+    <label for="">Harga</label>
+    <input type="number" name="harga" id="" value="{{ $edit['harga'] }}">
+    <br>
+    <label for="">Stok</label>
+    <input type="number" name="stok" id="" value="{{ $edit['stok'] }}">
+    <div class="col-md-4">
     <label for="image" class="form-label">Inputkan File</label>
-    <input type="file" class="form-control"  name="image" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId" value="{{ asset('foto_produk/'.$edit['image']) }}">
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </div>
+    <input type="file" class="form-control"  name="image[]" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId" value="{{ asset('foto_produk/'.$edit['image']) }}">
+    <div class="col-12">
+    <input type="submit" value="Submit">
+    </div>
   @endforeach
 </form>
 </body>

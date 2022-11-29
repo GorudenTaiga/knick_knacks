@@ -192,12 +192,13 @@ p {
     @foreach ($isi as $produk)
     <div class="gambar">
     	<div class="foto">
-            @php
-                $images = explode('|', $produk->image)
+            {{-- @php
+                $images = explode('|', $produk->image)         //Kalau mau banyak gambar
             @endphp
             @foreach ($images as $foto)
     		<img src="{{ asset($foto) }}">
-            @endforeach
+            @endforeach --}}
+            <img src="{{ asset($produk->image) }}">               {{-- Kalau mau gambarnya 1 aja --}}
     	</div>
         <div class="foto">
             <h1>{{ $produk->nama }}</h1><br>
@@ -205,7 +206,7 @@ p {
             <p>Details : </p>
             <p>{{ $produk->detail }}</p>
             @if (Auth::user()->level == 'user')
-            <a href="/cart" class="beli">Beli</a>
+            <a href="" class="beli">Beli</a>
             @else
             <p><a href="admin/{{ $produk->id }}/edit" class="loginn">EDIT</a><br><br><a href="admin/{{ $produk->id }}/hapus" class="hapus">HAPUS</a></p>
             @endif
