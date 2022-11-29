@@ -20,17 +20,17 @@ body{
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
- 
+
 section{
     width:100%;
     height:15vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -39,12 +39,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -103,7 +103,7 @@ top: 10px;
     width: 80%;
     padding-right: 20px;
     border-radius: 15px;
-   
+
 }
 
 .user-details .input-box .details{
@@ -140,7 +140,7 @@ top: 10px;
     cursor: pointer;
     border-radius: 10px;
     letter-spacing: 1px;
-    background: #000000; 
+    background: #000000;
 }
 
 .loginn:hover{
@@ -169,7 +169,7 @@ input{
     border: 2px solid grey;
 }
 
-</style> 
+</style>
 </head>
 <body>
 	<section>
@@ -185,7 +185,7 @@ input{
       <div class="foto">
         <img src="logo3.jpeg">
       </div>
-    
+
     <div class="container">
             <form>
             <div class="user-details">
@@ -207,7 +207,7 @@ input{
                 </div>
             </div>
             <br>
-                <a href="admin.php" class="loginn">Simpan</a>
+                <input type="submit" value="Simpan" class="loginn">
             </form>
             </div>
 </body>

@@ -20,7 +20,7 @@ body{
 ul{
     list-style:none;
 }
- 
+
 a{
     text-decoration:none;
 }
@@ -29,7 +29,7 @@ section{
     height: 15vh;
     position: relative;
 }
- 
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -38,12 +38,12 @@ nav{
     background-color:#D9D9D9;
     box-shadow:2px 2px 12px rgba(0,0,0,0.2);
     padding:0px 5%;
-     
+
 }
 nav ul{
     display: flex;
 }
-  
+
 nav ul li a{
     justify-content: center;
     margin:30px;
@@ -162,7 +162,7 @@ top: 10px;
             -Shampo+Conditioner 180 ml<br>
             -Spray Cologne 100 ml<br>
             -Handsanitizer Gel 20 ml</p>
-            <a href="Keranjang.php" class="beli">Beli</a>
+            <input type="submit" value="Beli" class="beli">
         </div>
     </div>
 </body>

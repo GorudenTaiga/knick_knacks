@@ -189,24 +189,24 @@ top: 10px;
 
     <div class="gambar">
         <div class="foto">
-            <a href="PaketnussaA.php"><img src="logo3.jpeg"></a>
-            <p><a href="Paketnussaedit.php" class="loginn">EDIT</a><br><br><a href="#" class="hapus">HAPUS</a></p>
+            <img src="logo3.jpeg"></a>
+            <p><input type="submit" value="EDIT" class="loginn"><br><br><input type="submit" value="HAPUS" class="loginn"></p>
         </div>
         <div class="foto">
-            <a href="PaketnussaB.php"><img src="logo4.jpeg"></a>
-            <p><a href="#" class="loginn">EDIT</a><br><br><a href="#" class="hapus">HAPUS</a></p>
+            <img src="logo4.jpeg"></a>
+            <p><input type="submit" value="EDIT" class="loginn"><br><br><input type="submit" value="HAPUS" class="loginn"></p>
         </div>
         <div class="foto">
-            <a href="PaketElsa.php"><img src="logo5.jpeg"></a>
-            <p><a href="#" class="loginn">EDIT</a><br><br><a href="#" class="hapus">HAPUS</a></p>
+            <img src="logo5.jpeg"></a>
+            <p><input type="submit" value="EDIT" class="loginn"><br><br><input type="submit" value="HAPUS" class="loginn"></p>
         </div>
         <div class="foto">
-            <a href="PaketnussaA.php"><img src="logo3.jpeg"></a>
-            <p><a href="#" class="loginn">EDIT</a><br><br><a href="#" class="hapus">HAPUS</a></p>
+            <img src="logo3.jpeg"></a>
+            <p><input type="submit" value="EDIT" class="loginn"><br><br><input type="submit" value="HAPUS" class="loginn"></p>
         </div>
         <div class="foto">
-            <a href="PaketnussaB.php"><img src="logo4.jpeg"></a>
-            <p><a href="#" class="loginn">EDIT</a><br><br><a href="#" class="hapus">HAPUS</a></p>
+            <img src="logo4.jpeg"></a>
+            <p><input type="submit" value="EDIT" class="loginn"><br><br><input type="submit" value="HAPUS" class="loginn"></p>
         </div>
     </div>
 </body>

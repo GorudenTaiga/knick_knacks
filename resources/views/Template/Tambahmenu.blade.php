@@ -27,7 +27,7 @@ a{
 
 section{
     width:100%;
-    height:80vh;
+    height:15vh;
     position: relative;
 }
 
@@ -120,6 +120,58 @@ nav ul li a{
     font-family: font-family: 'Poppins', sans-serif;
     color: #3C38EA;
 }
+.container{
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    padding-right: 20px;
+    border-radius: 15px;
+
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-size: 17px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.user-details .input-box input{
+    width: 450px;
+    height:35px;
+    margin: 3px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    border-radius: 7px;
+    border: 2px solid grey;
+    display: inline-block;
+}
+.loginn{
+    height: 45px;
+    margin: 30px 0;
+}
+.loginn{
+    outline: none;
+    padding: 13px 50px;
+    width: 20px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    background: #000000;
+}
+
+.loginn:hover{
+    background: grey;
+    color: #FFF;
+  }
 .krnjg{
     position: relative;
 width: 100px;
@@ -143,9 +195,38 @@ top: 10px;
         <nav>
             <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
             <ul>
-                <li><img class="user" src="{{ asset('img/user.png') }}"></li>
+                <li><img class="user" src="user.png"></li>
             </ul>
               </nav>
     </section>
+
+    <div class="container">
+            <form>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Nama Produk</span>
+                    <input type="text" placeholder="Nama Produk" required="">
+                </div>
+                <div class="input-box">
+                    <span class="details">Harga Produk</span>
+                    <input type="text" placeholder="Harga" required="">
+                </div>
+                <div class="input-box">
+                    <span class="details">Deksripsi</span>
+                    <input type="text" placeholder="Deksripsi" required="">
+                </div>
+                <div class="input-box">
+                    <span class="details">Total Produk</span>
+                    <input type="text" placeholder="Total Produk" required="">
+                </div>
+                <div class="input-box">
+                    <span class="details">Total Produk</span>
+                    <input type="file" placeholder="Total Produk" required="">
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Upload" class="loginn">
+            </form>
+    </div>
   </body>
 </html>
