@@ -217,10 +217,6 @@ input{
     @include('partials.navbar')
     <div class="container">
         <div class="gambar">
-            <div class="foto">
-                    <img src="logo3.jpeg">
-            </div>
-
             <div class="container">
             <form action="/user/order/post" method="POST">
                 @csrf
