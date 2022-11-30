@@ -213,7 +213,7 @@ p {
                 @if (Auth::user()->level == 'user')
                 <input type="submit" value="Masukkan Keranjang" class="beli" title="Masukkan Keranjang">
                 @else
-                <p><a href="admin/{{ $produk->id }}/edit" class="loginn">EDIT</a><br><br><a href="admin/{{ $produk->id }}/hapus" class="hapus">HAPUS</a></p>
+                <p><a href="admin/edit/{{ $produk->id }}" class="loginn">EDIT</a><br><br><a href="admin/hapus/{{ $produk->id }}" class="hapus">HAPUS</a></p>
                 @endif
             </div>
         </div>
