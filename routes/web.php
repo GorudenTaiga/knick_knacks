@@ -51,7 +51,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/tambah', [ProdukController::class, 'store'])->name('simpan');
         Route::get('/{id}', [ProdukController::class, 'show'])->name('show');
         Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('edit');
-        Route::post('/edit/{id}', [ProdukController::class, 'update'])->name('simpan_edit');
+        Route::get('/hapus/{id}', [ProdukController::class, 'destroy']);
+        Route::post('/update/{id}', [ProdukController::class, 'update'])->name('simpan_edit');
     });
 });
 

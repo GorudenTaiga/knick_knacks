@@ -247,7 +247,7 @@ footer {
     <div class="gambar">
         @foreach ($isi as $produk)
         <div class="foto">
-            <a href="/product/{{ $produk->id }}"><img src="{{ asset($produk->image) }}">
+            <a href="/product/{{ $produk->id }}"><img src="{{ asset('public/foto_produk/'.$produk->image) }}">
             <p>{{ $produk->nama }}<br>Rp. {{ $produk->harga }}</p></a>
         </div>
         @endforeach

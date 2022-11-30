@@ -62,7 +62,7 @@ class ProdukController extends Controller
             'stok' => $request->stok,
             'image' => $img_url /* implode('|', $image) */
         ]);
-        return redirect('/admin/tambah');
+        return redirect('/admin');
     }
 
     public function tambah()
@@ -105,16 +105,17 @@ class ProdukController extends Controller
      */
     public function update($id, Request $request)
     {
-        $produk = Produk::find($id);
+        /* $produk = Produk::find($id);
         if ($request->file() != '') {
+            $file = $request->image;
+            $image_name = md5(rand(1000, 10000));
             $path = 'public/foto_produk/';
             if ($produk->image != '' || $produk->image != null) {
                 $file_old = $produk->image;
                 unlink($path.$file_old);
             }
-            $file = $request->image;
             $file->move($path, $file);
-            $produk->update(['image' => $file]);
+            $produk->update(['image' => $image_name]);
         }
         $this->validate($request, [
             'nama' => 'required',
@@ -127,10 +128,36 @@ class ProdukController extends Controller
             'nama' => $request->nama,
             'detail' => $request->detail,
             'harga' => $request->harga,
-            'stok' => $request->stok
+            'stok' => $request->stok,
+            'image' => $file
         ]);
-        return redirect('/admin')->with('status', 'Data Berhasil Diupdate');
-        dd($request->all());
+        return redirect('/admin')->with('status', 'Data Berhasil Diupdate'); */
+
+
+                $data = Produk::find($id);
+                $data->nama = $request->nama;
+                $data->detail = $request->detail;
+                $data->harga = $request->harga;
+                $data->stok = $request->stok;
+                if ($request->image != null) {
+                    $image = array();
+                    if ($files = $request->file('image')) {
+                        foreach ($files as $file) {
+                            $image_name = md5(rand(1000, 10000));
+                            $ext = strtolower($file->getClientOriginalExtension());
+                            $image_fullname = $image_name . '.' . $ext;
+                            $upload_path = 'public/foto_produk/';
+                            $img_url = $image_fullname;
+                            $file->move($upload_path, $image_fullname);
+                            $image[] = $img_url;
+                            $data->image = $img_url;
+                        }
+                    };
+                }
+                $data->save();
+                return redirect('/admin');
+                /* dd($request->all()); */
+        /* } */
     }
 
     /**
@@ -139,8 +166,9 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk)
+    public function destroy(Produk $produk, $id)
     {
-        //
+        Produk::find($id)->delete();
+        return redirect()->back();
     }
 }

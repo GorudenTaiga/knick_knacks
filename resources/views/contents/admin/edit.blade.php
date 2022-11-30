@@ -120,7 +120,7 @@ top: 10px;
 </head>
 <body>
     @foreach ($produk as $edit)
-<form class="row g-3" method="POST" action="/admin/edit/{{ $edit['id'] }}">
+<form class="row g-3" method="POST" action="/admin/update/{{ $edit['id'] }}">
     @csrf
     <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nama Barang</label>
@@ -136,7 +136,7 @@ top: 10px;
     <input type="number" name="stok" id="" value="{{ $edit['stok'] }}">
     <div class="col-md-4">
     <label for="image" class="form-label">Inputkan File</label>
-    <input type="file" class="form-control"  name="image" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId" value="{{ asset('foto_produk/'.$edit['image']) }}">
+    <input type="file" name="image" id="">
     <div class="col-12">
     <input type="submit" value="Submit">
     </div>
