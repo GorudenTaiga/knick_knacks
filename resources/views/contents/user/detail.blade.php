@@ -200,7 +200,7 @@ p {
                 @foreach ($images as $foto)
                 <img src="{{ asset($foto) }}">
                 @endforeach --}}
-                <img src="{{ asset($produk->image) }}">               {{-- Kalau mau gambarnya 1 aja --}}
+                <img src="{{ asset('public/foto_produk/'.$produk->image) }}">               {{-- Kalau mau gambarnya 1 aja --}}
             </div>
             <div class="foto">
                 <input type="hidden" name="produkid" value="{{ $produk->id }}">

@@ -32,6 +32,7 @@ class LoginController extends Controller
         $user->fullname = $request->fullname;
         $user->phonenumber = $request->phonenumber;
         $user->gender = $request->gender;
+        $user->level = $request->level;
         $user->save();
         return redirect('/login');
         /* dd($request->all()); */

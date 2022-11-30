@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProdukRequest;
 use Illuminate\Http\Requests;
 use App\Http\Requests\UpdateProdukRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Exists;
 
 class ProdukController extends Controller
@@ -49,7 +50,7 @@ class ProdukController extends Controller
                 $ext = strtolower($file->getClientOriginalExtension());
                 $image_fullname = $image_name . '.' . $ext;
                 $upload_path = 'public/foto_produk/';
-                $img_url = $upload_path . $image_fullname;
+                $img_url = $image_fullname;
                 $file->move($upload_path, $image_fullname);
                 $image[] = $img_url;
             }
@@ -102,30 +103,34 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update($id, UpdateProdukRequest $request)
+    public function update($id, Request $request)
     {
-        $carigambar = Produk::where('id', $id)->get()->first();
-        if ($file = $request->file('image')) {
-            if ($carigambar->image != '' && $carigambar->image != null) {
-                $file_old = 'public/foto_produk'.$carigambar->image;
-                unlink($file_old);
-            }
-            $image_name = md5(rand(1000, 10000));
-            $ext = strtolower($file->getClientOriginalExtension());
-            $image_fullname = $image_name.'.'.$ext;
+        $produk = Produk::find($id);
+        if ($request->file() != '') {
             $path = 'public/foto_produk/';
-            $file->move($path.$image_fullname);
+            if ($produk->image != '' || $produk->image != null) {
+                $file_old = $produk->image;
+                unlink($path.$file_old);
+            }
+            $file = $request->image;
+            $file->move($path, $file);
+            $produk->update(['image' => $file]);
         }
-        $data = $request->validate([
+        $this->validate($request, [
             'nama' => 'required',
             'detail' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'image' => 'image|required|mimes:png,jpg,jpeg'
+            'image' => 'required'
         ]);
-        $update = Produk::where('id',$id)->update($data);
-        if ($update) return redirect('/admin');
-        /* dd($request->all()); */
+        Produk::where('id',$id)->update([
+            'nama' => $request->nama,
+            'detail' => $request->detail,
+            'harga' => $request->harga,
+            'stok' => $request->stok
+        ]);
+        return redirect('/admin')->with('status', 'Data Berhasil Diupdate');
+        dd($request->all());
     }
 
     /**
