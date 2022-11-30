@@ -56,6 +56,10 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
+Route::get('/about', function () {
+    return view('contents.about');
+});
+
 Route::get('/login', function () {
     return view('contents.login');
 })->name('login');
