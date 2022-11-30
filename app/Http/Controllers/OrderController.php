@@ -49,16 +49,14 @@ class OrderController extends Controller
         $id = Auth::user()->id;
         $carts = CartModel::where('userid', $id)->get();
         $simpanan->userid = Auth::user()->id;
-        dd($carts);
-        $produk = implode('|', $carts->nama_produk);
-        $harga = implode('|', $carts->harga);
-        $jumlah = implode('|', $carts->jumlah);
-        $simpanan->produk = $produk;
-        $simpanan->harga = $harga;
-        $simpanan->jumlah = $jumlah;
+        foreach ($carts as $cart){
+            $simpanan->produk = $cart->nama_produk;
+            $simpanan->harga = $cart->harga;
+            $simpanan->jumlah = $cart->jumlah;
+        }
 
-        /* $simpanan->save();
-        return redirect('/user/order'); */
+        $simpanan->save();
+        return redirect('/user/order');
     }
 
     public function order(Request $request) {
@@ -70,7 +68,7 @@ class OrderController extends Controller
             $order->nama = $request->nama;
             $order->alamat = $request->alamat;
             foreach ($simpanan as $simpan) {
-                $order->produk = explode('|', $simpan->produk);
+                $order->produk = $simpan->produk;
             }
             $order->nomor_telpon = $request->nomor_telpon;
             foreach ($cart as $carts){

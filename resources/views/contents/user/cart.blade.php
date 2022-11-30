@@ -124,6 +124,10 @@ td{
 <div class="row">
     <div class="col-12">
         <div class="table-responsive">
+            @foreach ($carts as $cart)
+            <form action="/user/order/{{ $cart->id }}" method="POST">
+            @endforeach
+                @csrf
             <table class="table">
                 <tr>
                     <th>Foto</th>
@@ -133,9 +137,7 @@ td{
                 </tr>
                 @foreach ($carts as $cart)
                 <tr>
-                    <form action="/user/order/{{ $cart->id }}" method="POST">
-                        @csrf
-                    <td><img src="{{ asset($cart->image) }}" class="img-cart"></td>
+                    <td><img src="{{ asset('public/foto_produk/'.$cart->image) }}" class="img-cart"></td>
                     <td>
                         <input type="hidden" name="produkid" value="{{ $cart->produkid }}">
                         {{ $cart->nama_produk }}
