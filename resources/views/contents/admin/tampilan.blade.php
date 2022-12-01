@@ -81,16 +81,16 @@ font-family: 'Poppins', sans-serif;
 color: #3C38EA;
 }
 .gambar{
-width: 80%;
+width: 90%;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
-margin: auto;
+margin:0 auto;
 margin-bottom: 0;
 }
 .gambar .foto img{
 padding-top: 25px;
 padding-bottom: 5px;
-width: 300px;
+width: 200px;
 border-radius: 10px;
 }
 .foto{
@@ -101,7 +101,7 @@ border-radius: 10px ;
 }
 .foto p{
 font-family: 'Poppins', sans-serif;
-font-size: 20px;
+font-size: 18px;
 }
 .loginn{
 height: 45px;
@@ -109,7 +109,7 @@ margin: 30px 0;
 }
 .loginn{
 outline: none;
-padding: 12px 100px;
+padding: 10px 93px;
 width: 200px;
 color: #FFF;
 font-family: 'Poppins', sans-serif;
@@ -132,7 +132,7 @@ margin: 30px 0;
 }
 .hapus{
 outline: none;
-padding: 12px 87px;
+padding: 10px 80px;
 width: 200px;
 color: #FFF;
 font-family: 'Poppins', sans-serif;
@@ -151,7 +151,7 @@ color: #FFF;
 
 .menu{
 height: 45px;
-margin: 30px 0;
+margin: 0 auto;
 }
 .menu{
 outline: none;

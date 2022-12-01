@@ -105,7 +105,7 @@ footer {
 }
 
 .footer {
-    background-color: #040a18;
+    background-color: #000;
     box-sizing: border-box;
     width: 100%;
     text-align: left;
@@ -138,14 +138,14 @@ footer {
 
 .footer h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     color: #f5f5f5;
     margin: 0;
     padding-bottom: 20px;
 }
 
 .footer .footer-left img {
-    width: 27%;
+    width: 30%;
     vertical-align: middle;
 }
 
@@ -167,7 +167,7 @@ footer {
 .footer .footer-center p span {
     display: block;
     font-weight: normal;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .footer .footer-right {
@@ -176,7 +176,7 @@ footer {
 
 .footer .footer-about {
     color: #92999f;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: normal;
     margin: 0px;
 }
@@ -184,7 +184,7 @@ footer {
 .footer .footer-about span {
     display: block;
     color: #ffffff;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -284,7 +284,7 @@ footer {
 }
 .info p{
   font-family: 'Poppins', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 .maps{
   text-align: center;
@@ -305,22 +305,19 @@ footer {
     </div>
 
     <div class="maps">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d495.51441026098405!2d106.7902077!3d-6.5070887!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c30512af9b9f%3A0x228f7e9efbf537f0!2sAgen%20Kino!5e0!3m2!1sid!2sid!4v1668791801587!5m2!1sid!2sid" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d495.51441026098405!2d106.7902077!3d-6.5070887!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c30512af9b9f%3A0x228f7e9efbf537f0!2sAgen%20Kino!5e0!3m2!1sid!2sid!4v1668791801587!5m2!1sid!2sid" width="1000" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <footer class="footer">
         <div class="footer-left">
             <h3>Knick Knacks</h3>
             <div class="credit-cards">
-                <img src="imglogo.jpeg">
+                <img src="{{ asset('img/logo.jpeg') }}">
             </div>
         </div>
         <div class="footer-center">
             <div>
                 <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>
-            </div>
-            <div>
-                <p><a href="#">knickknacks@gmail.com</a></p><br><br>
             </div>
 
             <div class="wrapper">

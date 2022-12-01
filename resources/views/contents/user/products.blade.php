@@ -41,11 +41,12 @@ body{
 .gambar .foto img{
     padding-top: 25px;
     padding-bottom: 5px;
-    width: 300px;
+    width: 200px;
     border-radius: 10px;
 }
 .foto{
     border: 3px solid #000;
+    color: #000;
     margin: 10px;
     text-align: center;
     border-radius: 10px ;
