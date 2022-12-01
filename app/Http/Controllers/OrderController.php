@@ -50,16 +50,6 @@ class OrderController extends Controller
         $carts = CartModel::where('userid', $id)->get();
         $jumlah = count($carts);
         for ($i=0; $i < $jumlah; $i++) {
-            foreach ($carts as $c){
-                $produk = new Produk();
-                $product = $produk->where('nama', $c->produk)->get();
-                foreach ($product as $p){
-                    foreach ($simpanan as $s) {
-                        $jumlah= $p->stok - $s->jumlah;
-                        $produk->update(['stok' => $jumlah]);
-                    }
-                }
-            }
             $simpanan->userid = Auth::user()->id;
             /* foreach ($carts as $cart){
                 $simpanan->produk = $cart->nama_produk;
@@ -76,19 +66,14 @@ class OrderController extends Controller
 
     public function order(Request $request) {
         $id = Auth::user()->id;
-      $cart = CartModel::where('userid', $id)->get();
+        $cart = CartModel::where('userid', $id)->get();
         $jumlah = count($cart);
         $simpanan = simpanan::all();
-        foreach ($cart as $c){
-            $produk = new Produk();
-            $product = $produk->where('nama', $c->produk)->get();
+        foreach ($simpanan as $c){
+            $product = Produk::where('nama', $c->produk)->get();
             foreach ($product as $p){
-                foreach ($simpanan as $s) {
-                    $stok = $p->stok - $s->jumlah;
-                    $p->stok = $stok;
-                    $p->save();
-                }
-
+                $jumlah = $p->stok - $c->jumlah;
+                Produk::where('nama', $c->produk)->update(['stok' => $jumlah]);
             }
         }
         for ($i=0; $i < $jumlah; $i++) {
@@ -110,7 +95,7 @@ class OrderController extends Controller
         }
         DB::table('simpanan')->delete();
         DB::table('cart')->delete();
-        return redirect()->back()->withSuccess();
+        return redirect('/');
         /* dd($order); */
 
             /* dd($request->all()); */
