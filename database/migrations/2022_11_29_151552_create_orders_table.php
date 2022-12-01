@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->id();
-            $table->text('fullname');
+            $table->text('userid');
+            $table->text('nama');
             $table->text('alamat');
             $table->text('produk');
             $table->text('nomor_telpon');
-            $table->integer('harga');
-            $table->integer('jumlah');
             $table->integer('total');
             $table->enum('metode', ['BCA', 'COD', 'DANA', 'GOPAY']);
             $table->enum('status', ['Diproses', 'Selesai']);
