@@ -235,9 +235,7 @@ input{
                 </div>
                 <div class="input-box">
                     <span class="details">Total Bayar</span>
-                    @foreach ($isi as $produk)
-                    <input type="text" name="total" placeholder="Total Pesanan" value="{{ $produk->harga * $produk->jumlah }}" readonly>
-                    @endforeach
+                    <input type="text" name="total" placeholder="Total Pesanan" value="{{ $total }}" readonly>
                 </div>
                 <div class="input-box">
                     <span class="details">Metode Pembayaran</span>

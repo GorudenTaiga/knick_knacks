@@ -180,7 +180,9 @@ height: 38.09px;
 left: 100;
 top: 10px;
 }
-
+p {
+    color: black;
+}
 
 </style>
 </head>
@@ -199,7 +201,12 @@ top: 10px;
         @foreach ($isi as $produk)
             <div class="foto">
                 <a href="admin/{{ $produk->id }}"><img src="{{ asset('public/foto_produk/'.$produk->image) }}">
-                <p></p>
+                <p>
+                    {{ $produk->nama }}
+                </p>
+                <p>
+                    Harga : Rp {{ $produk->harga }}
+                </p>
                 </a>
                 <p><a href="admin/edit/{{ $produk->id }}" class="loginn">EDIT</a><br><br><a href="admin/hapus/{{ $produk->id }}" class="hapus">HAPUS</a></p>
             </div>

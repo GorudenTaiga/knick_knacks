@@ -188,6 +188,17 @@ left: 100;
 top: 10px;
 }
 
+.loginn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    background: #009B71;
+    color: #FFFFFF;
+    border: #009B71 3px solid;
+    border-radius: 15px;
+    padding: 7px 53px;
+    justify-content: right;
+}
+
 </style>
 </head>
 <body>
@@ -205,23 +216,23 @@ top: 10px;
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Nama Produk</span>
-                    <input type="text" placeholder="Nama Produk" required="">
+                    <input type="text" name="nama" placeholder="Nama Produk" required="">
                 </div>
                 <div class="input-box">
                     <span class="details">Harga Produk</span>
-                    <input type="text" placeholder="Harga" required="">
+                    <input type="number" name="harga" placeholder="Harga" required="">
                 </div>
                 <div class="input-box">
                     <span class="details">Deksripsi</span>
-                    <input type="text" placeholder="Deksripsi" required="">
+                    <input type="text" name="detail" placeholder="Deksripsi" required="">
                 </div>
                 <div class="input-box">
                     <span class="details">Total Produk</span>
-                    <input type="text" placeholder="Total Produk" required="">
+                    <input type="number" name="stok" placeholder="Total Produk" required="">
                 </div>
                 <div class="input-box">
-                    <span class="details">Total Produk</span>
-                    <input type="file" placeholder="Total Produk" required="">
+                    <span class="details">Gambar Produk</span>
+                    <input type="file" name="image" placeholder="Total Produk" required="">
                 </div>
             </div>
             <br>

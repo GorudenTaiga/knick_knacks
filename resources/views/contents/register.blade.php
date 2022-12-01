@@ -289,7 +289,7 @@ p{
                     {{-- <label>Password Tidak Sesuai</label> --}}
                 </div>
             </div>
-            <input type="submit" value="Login" class="loginn">
+            <input type="submit" value="Register" class="loginn">
         </form>
     </div>
 </body>
