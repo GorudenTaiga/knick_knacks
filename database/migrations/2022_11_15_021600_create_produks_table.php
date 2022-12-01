@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text("detail");
             $table->integer("harga");
             $table->integer("stok");
-            $table->text("foto");
+            $table->text("image");
             $table->timestamps();
         });
     }

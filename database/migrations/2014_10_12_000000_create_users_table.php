@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->enum('level', ['admin', 'user']);
             $table->rememberToken();
+            $table->text('fullname');
+            $table->text('alamat');
+            $table->enum('gender', ['Male', 'Female']);
+            $table->text('phonenumber');
             $table->timestamps();
         });
     }
