@@ -312,10 +312,9 @@ footer {
         <div class="footer-left">
             <h3>Knick Knacks</h3>
             <div class="credit-cards">
-                <img src="img/logo.jpeg">
+                <img src="imglogo.jpeg">
             </div>
         </div>
-
         <div class="footer-center">
             <div>
                 <p><span>Indonesia</span> Bojonggede, Bogor</p><br><br>

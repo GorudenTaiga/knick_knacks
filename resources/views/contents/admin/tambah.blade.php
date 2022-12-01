@@ -10,8 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style type="text/css">
-@charset "utf-8";
+
+    <style type="text/css">
+        @charset "utf-8";
 /* CSS Document*/
 body{
     font-family: 'Poppins', sans-serif;
@@ -26,6 +27,7 @@ ul{
 a{
     text-decoration:none;
 }
+
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -93,6 +95,77 @@ a{
     font-family: font-family: 'Poppins', sans-serif;
     color: #3C38EA;
 }
+.container{
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 15px;
+
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-size: 17px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.user-details .input-box input{
+    width: 450px;
+    height:35px;
+    margin: 3px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid grey;
+    display: inline-block;
+}
+.user-details .input-box textarea{
+    width: 450px;
+    height:35px;
+    margin: 3px;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid grey;
+    display: inline-block;
+}
+.loginn{
+    height: 45px;
+    margin: 30px 0;
+}
+.loginn{
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    color: white;
+    margin: 0px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    top: 90px;
+    right: 20px;
+    left: 20px;
+    bottom: 90px;
+    letter-spacing: 1px;
+    background: #000000;
+}
+
+.loginn:hover{
+    background: grey;
+    color: #FFF;
+  }
 .krnjg{
     position: relative;
 width: 100px;
@@ -108,39 +181,42 @@ height: 38.09px;
 left: 100;
 top: 10px;
 }
-.row g-3r{
-    justify-content: center;
-    max-width: 100%;
-    width: 80%;
-    padding-right: 20px;
-    border-radius: 15px;
 
-}
 </style>
 @include('contents.style-navbar')
 </head>
 <body>
-<form class="row g-3" method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">
-    @csrf
-  <div class="col-md-4">
-    <label for="validationCustom01" class="form-label">Nama Barang</label>
-    <input type="text" class="form-control" id="validationCustom01" name="nama" required>
-  </div>
-  <span>Detail</span>
-  <textarea name="detail" id="" cols="30" rows="10"></textarea>
-  <br>
-  <label for="">Harga</label>
-  <input type="number" name="harga" id="">
-  <br>
-  <label for="">Stok</label>
-  <input type="number" name="stok" id="">
-  <div class="col-md-4">
-    <label for="image" class="form-label">Inputkan File</label>
-    <input type="file" class="form-control"  name="image[]" id="image" placeholder="File Gambar Produk" aria-describedby="fileHelpId">
-  <div class="col-12">
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </div>
-</form>
+    <div class="container">
+        <form method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">
+            @csrf
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">Nama Produk</span>
+                <input type="text" name="nama" placeholder="Nama Produk" required="">
+            </div>
+            <div class="input-box">
+                <span class="details">Harga Produk</span>
+                <input type="number" name="harga" placeholder="Harga" required="">
+            </div>
+            <div class="input-box">
+                <span class="details">Deksripsi</span>
+                <textarea name="detail" id="" cols="30" rows="10" placeholder="Deskripsi Produk"></textarea>
+            </div>
+            <div class="input-box">
+                <span class="details">Stok Produk</span>
+                <input type="number" name="stok" placeholder="Stok Produk" required="">
+            </div>
+            <div class="input-box">
+                <span class="details">Gambar Produk</span>
+                <input type="file" name="image[]" placeholder="Total Produk" required="">
+            </div>
+            <br>
+            <button type="submit" class="loginn"><span class="details">Upload</span></button>
+        </div>
+        <br>
+        {{-- <input type="submit" value="Upload" class="loginn"> --}}
+        </form>
+    </div>
 </body>
 </html>
 @endsection

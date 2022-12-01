@@ -105,59 +105,33 @@ class ProdukController extends Controller
      */
     public function update($id, Request $request)
     {
-        /* $produk = Produk::find($id);
-        if ($request->file() != '') {
+        $produk = Produk::find($id);
+        if ($request->file() == null) {
+            Produk::where('id',$id)->update([
+                'nama' => $request->nama,
+                'detail' => $request->detail,
+                'harga' => $request->harga,
+                'stok' => $request->stok
+            ]);
+        }
+        if ($request->file() != null) {
             $file = $request->image;
-            $image_name = md5(rand(1000, 10000));
+            $image_name = md5(rand(1000, 10000)).'.'.$file->getClientOriginalExtension();
             $path = 'public/foto_produk/';
-            if ($produk->image != '' || $produk->image != null) {
+            if ($produk->image == $image_name) {
                 $file_old = $produk->image;
                 unlink($path.$file_old);
             }
-            $file->move($path, $file);
-            $produk->update(['image' => $image_name]);
+            $file->move($path, $image_name);
+            Produk::where('id',$id)->update([
+                'nama' => $request->nama,
+                'detail' => $request->detail,
+                'harga' => $request->harga,
+                'stok' => $request->stok,
+                'image' => $image_name
+            ]);
         }
-        $this->validate($request, [
-            'nama' => 'required',
-            'detail' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
-            'image' => 'required'
-        ]);
-        Produk::where('id',$id)->update([
-            'nama' => $request->nama,
-            'detail' => $request->detail,
-            'harga' => $request->harga,
-            'stok' => $request->stok,
-            'image' => $file
-        ]);
-        return redirect('/admin')->with('status', 'Data Berhasil Diupdate'); */
-
-
-                $data = Produk::find($id);
-                $data->nama = $request->nama;
-                $data->detail = $request->detail;
-                $data->harga = $request->harga;
-                $data->stok = $request->stok;
-                if ($request->image != null) {
-                    $image = array();
-                    if ($files = $request->file('image')) {
-                        foreach ($files as $file) {
-                            $image_name = md5(rand(1000, 10000));
-                            $ext = strtolower($file->getClientOriginalExtension());
-                            $image_fullname = $image_name . '.' . $ext;
-                            $upload_path = 'public/foto_produk/';
-                            $img_url = $image_fullname;
-                            $file->move($upload_path, $image_fullname);
-                            $image[] = $img_url;
-                            $data->image = $img_url;
-                        }
-                    };
-                }
-                $data->save();
-                return redirect('/admin');
-                /* dd($request->all()); */
-        /* } */
+        return redirect('/admin')->with('status', 'Data Berhasil Diupdate');
     }
 
     /**
