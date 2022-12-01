@@ -271,12 +271,19 @@ footer {
   color: #FF7F00;
 }
 .krnjg{
-    height: 60px;
+    position: relative;
+width: 100px;
+height: 55.52px;
+left: 100;
+top: 0px;
+
 }
 .user{
-    height: 40px;
-    justify-content: center;
-    text-align: center;
+    position: relative;
+width: 35px;
+height: 38.09px;
+left: 100;
+top: 10px;
 }
 .text{
   padding: 20px 100px;
