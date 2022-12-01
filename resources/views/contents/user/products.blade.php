@@ -54,6 +54,7 @@ body{
 p{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    color: #000;
 }
 .krnjg{
     position: relative;
