@@ -205,24 +205,23 @@ p{
     background: white;
 }
 .loginn{
-    height: 45px;
-	margin: 30px 0;
-    text-align: center;
+    height: 40px;
+	text-align: center;
     align-items: center;
 }
 .loginn{
+    text-align: center;
     margin: 0 auto;
     outline: none;
-    padding: 13px 30px;
-    width: 40%;
+    width: 100%;
     color: #FFF;
     font-family: 'Poppins', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
     letter-spacing: 1px;
     background: #009B71;
-    position: absolute;
+    position: relative;
 }
 
 .loginn:hover{

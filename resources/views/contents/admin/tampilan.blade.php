@@ -14,6 +14,7 @@
     @charset "utf-8";
 /* CSS Document*/
 body{
+    width: 100%;
 background-color:#B0EBDB;
 margin:0px;
 padding:0px;
