@@ -96,10 +96,14 @@ nav ul li .loginn{
 .login{
     background: #D9D9D9;
     width: 500px;
+    height: 500px;
 }
 form{
     width: 300px;
     margin: 50px auto;
+}
+.form a{
+    text-decoration: none;
 }
 h1 {
     margin: 25px;
@@ -151,15 +155,14 @@ form label{
     border: 2px solid grey;
 }
 .loginn{
+    justify-content: center;
     outline: none;
-    margin: 2px;
-    width: 55%;
+    width: 45%;
     height: 70%;
     color: #FFF;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     cursor: pointer;
-    margin: 90px;
     border-radius: 10px;
     background: #000;
 }
