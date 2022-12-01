@@ -97,6 +97,7 @@ nav ul li a{
 	justify-content: center;
 	max-width: 400xp;
 	width: 50%;
+    height: 60%;
 	background: #D9D9D9;
 	padding: 30px 30px;
 	border-radius: 15px;
@@ -119,16 +120,15 @@ nav ul li a{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 20px 0 12px 0;
+	margin: 20px 0 10px 0;
 }
 form .user-details .input-box{
-	margin-bottom: 28px;
+	margin-bottom: 25px;
 	width: calc(100% / 2 - 20px);
 }
 .user-details .input-box .details{
 	display: block;
 	font-size: 17px;
-	margin-bottom: 5px;
 }
 .user-details .input-box input{
 	width: 100%;
@@ -213,8 +213,8 @@ p{
 .loginn{
     margin: 0 auto;
     outline: none;
-    padding: 13px 300px;
-    width: 220px;
+    padding: 13px 30px;
+    width: 40%;
     color: #FFF;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
