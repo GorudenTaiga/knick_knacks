@@ -221,17 +221,18 @@ input{
             <form action="/user/order/post" method="POST">
                 @csrf
             <div class="user-details">
+
                 <div class="input-box">
-                    <span class="details">Nama Lengkap</span>
-                    <input type="text" placeholder="Nama Lengkap" required="" name="nama">
+                    <span class="details">Nama Produk</span>
+                    @foreach ($isi as $i)
+                    <input type="text" value="{{ $i->nama_produk }}" readonly>
+                    @endforeach
                 </div>
                 <div class="input-box">
-                    <span class="details">Alamat Pengiriman</span>
-                    <input type="text" placeholder="Alamat Pengiriman" required="" name="alamat">
-                </div>
-                <div class="input-box">
-                    <span class="details">Nomor Telepon</span>
-                    <input type="number" placeholder="Nomor Telepon" required="" name="nomor_telpon">
+                    <span class="details">Jumlah Beli</span>
+                    @foreach ($isi as $i)
+                    <input type="text" value="{{ $i->jumlah }}" readonly>
+                    @endforeach
                 </div>
                 <div class="input-box">
                     <span class="details">Total Bayar</span>

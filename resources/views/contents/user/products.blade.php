@@ -249,8 +249,15 @@ footer {
     <div class="gambar">
         @foreach ($isi as $produk)
         <div class="foto">
-            <a href="/product/{{ $produk->id }}"><img src="{{ asset('public/foto_produk/'.$produk->image) }}">
-            <p>{{ $produk->nama }}<br>Rp. {{ $produk->harga }}</p></a>
+            <a href="
+            @if ($produk->stok != 0 || $produk->stok != null)
+                /product/{{ $produk->id }}
+            @else
+                #
+            @endif"><img src="{{ asset('public/foto_produk/'.$produk->image) }}">
+            <p>{{ $produk->nama }}<br>Rp. {{ $produk->harga }}</p>
+
+        </a>
         </div>
         @endforeach
     </div>

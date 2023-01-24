@@ -193,7 +193,7 @@ p {
             <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
             <ul>
               <li><a href="/admin/tambah" class="menu">Tambah Menu</a></li>
-              <li><a href="/logout"><img class="user" src="{{ asset('img/user.png') }}"> | {{ Auth::user()->name }}</a></li>
+              <li><a href="/logout"><img class="user" src="{{ asset('') }}"> | {{ Auth::user()->name }}</a></li>
             </ul>
         </nav>
     </section>
@@ -207,6 +207,16 @@ p {
                 </p>
                 <p>
                     Harga : Rp {{ $produk->harga }}
+                </p>
+                <p>
+                    Stok : {{ $produk->stok }}
+                </p>
+                <p>
+                    @if ($produk->stok != 0 || $produk->stok != null)
+                        <p>Stok Sedia</p>
+                    @elseif ($produk->stok == 0 || $produk->stok == null)
+                        <p>Stok Habis</p>
+                    @endif
                 </p>
                 </a>
                 <p><a href="admin/edit/{{ $produk->id }}" class="loginn">EDIT</a><br><br><a href="admin/hapus/{{ $produk->id }}" class="hapus">HAPUS</a></p>

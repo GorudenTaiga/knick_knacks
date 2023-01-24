@@ -145,4 +145,10 @@ class ProdukController extends Controller
         Produk::find($id)->delete();
         return redirect()->back();
     }
+
+    public function slug($id){
+        return view('contents.user.detail', [
+            'isi' => Produk::where('id', $id)->get()
+        ]);
+    }
 }

@@ -126,14 +126,22 @@ td{
         <div class="table-responsive">
             <table class="table">
                 <tr>
+                    <th>Tanggal</th>
                     <th>Nama Produk</th>
+                    <th>Jumlah Produk</th>
                     <th>Total</th>
                     <th>Status</th>
                 </tr>
                 @foreach ($isi as $isian)
                 <tr>
                     <td>
+                        {{ $isian->created_at }}
+                    </td>
+                    <td>
                         {{ $isian->produk }}
+                    </td>
+                    <td>
+                        {{ $isian->jumlah }}
                     </td>
                     <td>
                         Rp {{ $isian->total }}

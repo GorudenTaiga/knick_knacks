@@ -28,6 +28,34 @@ a{
     text-decoration:none;
 }
 
+section{
+    width:100%;
+    height:15vh;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    height:90px;
+    background-color:#D9D9D9;
+    box-shadow:2px 2px 12px rgba(0,0,0,0.2);
+    padding:0px 5%;
+
+}
+nav ul{
+    display: flex;
+}
+
+nav ul li a{
+    justify-content: center;
+    margin:30px;
+    font-family: 'Poppins', sans-serif;
+    color:#000000;
+    font-size: 25px;
+    font-weight:700;
+}
 .text-container p:nth-child(1){
     font-family: 'Poppins', sans-serif;
     color: #000000;
@@ -101,6 +129,7 @@ a{
     justify-content: center;
     max-width: 100%;
     width: 100%;
+    padding-right: 20px;
     border-radius: 15px;
 
 }
@@ -121,20 +150,6 @@ a{
     outline: none;
     font-family: 'Poppins', sans-serif;
     padding: 10px;
-    text-align: center;
-    border-radius: 7px;
-    border: 2px solid grey;
-    display: inline-block;
-}
-.user-details .input-box textarea{
-    width: 450px;
-    height:35px;
-    margin: 3px;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-    padding: 10px;
-    text-align: center;
     border-radius: 7px;
     border: 2px solid grey;
     display: inline-block;
@@ -144,20 +159,14 @@ a{
     margin: 30px 0;
 }
 .loginn{
-    width: 130px;
-    height: 42px;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
     outline: none;
-    color: white;
-    margin: 0px 10px;
+    padding: 13px 50px;
+    width: 20px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 10px;
-    top: 90px;
-    right: 20px;
-    left: 20px;
-    bottom: 90px;
     letter-spacing: 1px;
     background: #000000;
 }
@@ -182,11 +191,22 @@ left: 100;
 top: 10px;
 }
 
+.loginn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    background: #009B71;
+    color: #FFFFFF;
+    border: #009B71 3px solid;
+    border-radius: 15px;
+    padding: 7px 53px;
+    justify-content: right;
+}
+
 </style>
 @include('contents.style-navbar')
 </head>
 <body>
-    <div class="container">
+    <<div class="container">
         <form method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">
             @csrf
         <div class="user-details">
@@ -211,10 +231,10 @@ top: 10px;
                 <input type="file" name="image[]" placeholder="Total Produk" required="">
             </div>
             <br>
-            <button type="submit" class="loginn"><span class="details">Upload</span></button>
+                {{--<button type="submit" class="loginn"><span class="details">Upload</span></button>--}}
+                <input type="submit" value="Upload" class="loginn">
         </div>
         <br>
-        {{-- <input type="submit" value="Upload" class="loginn"> --}}
         </form>
     </div>
 </body>

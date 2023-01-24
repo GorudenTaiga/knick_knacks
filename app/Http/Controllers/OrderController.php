@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateOrderRequest;
 use App\Models\CartModel;
 use App\Models\Produk;
 use App\Models\simpanan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -66,9 +67,8 @@ class OrderController extends Controller
 
     public function order(Request $request) {
         $id = Auth::user()->id;
-      $cart = CartModel::where('userid', $id)->get();
         $cart = CartModel::where('userid', $id)->get();
-        $jumlah = count($cart);
+        $user = Auth::user();
         $simpanan = simpanan::all();
         foreach ($cart as $c){
             $produk = new Produk();
@@ -82,28 +82,31 @@ class OrderController extends Controller
                     $p->stok = $stok;
                     $p->save();
                 }
-
-                $jumlah = $p->stok - $c->jumlah;
-                Produk::where('nama', $c->produk)->update(['stok' => $jumlah]);
             }
         }
-        for ($i=0; $i < $jumlah; $i++) {
             foreach ($simpanan as $s){
                 $total = $s->harga*$s->jumlah;
             }
             $order = new Order();
             $order->userid = Auth::user()->id;
-            $order->nama = $request->nama;
-            $order->alamat = $request->alamat;
+            if (Auth::user()) {
+                $order->nama = $user->fullname;
+                $order->alamat = $user->alamat;
+                $order->nomor_telpon = $user->phonenumber;
+            }
+            else {
+                $order->nama = $request->nama;
+                $order->alamat = $request->alamat;
+                $order->nomor_telpon = $request->nomor_telpon;
+            }
             foreach ($simpanan as $simpan) {
                 $order->produk = $simpan->produk;
             }
-            $order->nomor_telpon = $request->nomor_telpon;
+            $order->jumlah = $c->jumlah;
             $order->total = $total;
             $order->metode = strtolower($request->metode);
             $order->status = 'Diproses';
             $order->save();
-        }
         DB::table('simpanan')->delete();
         DB::table('cart')->delete();
         return redirect('/');
@@ -125,7 +128,7 @@ class OrderController extends Controller
             $total = $s->harga*$s->jumlah;
         }
         return view('contents.user.order', [
-            'isi' => CartModel::where('userid', $id),
+            'isi' => CartModel::where('userid', $id)->get(),
             'total' => $total
         ]);
     }

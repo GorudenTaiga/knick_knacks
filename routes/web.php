@@ -82,7 +82,7 @@ Route::prefix('/template')->group(function () {
         return view('Template.Home');
     });
     Route::get('/admin', function () {
-        return view('tambah');
+        return view('Template.Tambahmenu');
     });
     Route::get('/cart', function () {
         return view('Template.Keranjang');
