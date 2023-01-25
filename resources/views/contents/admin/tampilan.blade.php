@@ -193,7 +193,8 @@ p {
             <a href="#" class="logo"><span>Knick</span> <span>Knacks</span></a>
             <ul>
               <li><a href="/admin/tambah" class="menu">Tambah Menu</a></li>
-              <li><a href="/logout"><img class="user" src="{{ asset('') }}"> | {{ Auth::user()->name }}</a></li>
+              <li><a href="/admin/order" class="menu">Orderan</a></li>
+              <li><a href="/logout"><img class="user" src="{{ asset('img/user.png') }}"> | {{ Auth::user()->name }}</a></li>
             </ul>
         </nav>
     </section>

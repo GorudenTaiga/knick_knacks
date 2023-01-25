@@ -43,12 +43,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/order/post', [OrderController::class, 'order']);
         Route::post('/order/{id}', [OrderController::class, 'store']);
     });
-
     //Kumpulan Tampilan Admin
     Route::prefix('/admin')->group(function () {
         Route::get('/', [AdminController::class, 'tampil']);
         Route::get('/tambah', [ProdukController::class, 'tambah']);
         Route::post('/tambah', [ProdukController::class, 'store'])->name('simpan');
+        Route::get('/order', [AdminController::class, 'order']);
         Route::get('/{id}', [ProdukController::class, 'show'])->name('show');
         Route::get('/edit/{id}', [ProdukController::class, 'edit'])->name('edit');
         Route::get('/hapus/{id}', [ProdukController::class, 'destroy']);
