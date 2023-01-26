@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('produkid');
             $table->text('nama_user');
             $table->text('nama_produk');
-            $table->integer('harga');
-            $table->integer('jumlah');
+            $table->integer('harga')->unsigned();
+            $table->integer('jumlah')->unsigned();
             $table->text('image');
             $table->timestamps();
         });

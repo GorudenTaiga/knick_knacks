@@ -230,9 +230,7 @@ input{
                 </div>
                 <div class="input-box">
                     <span class="details">Jumlah Beli</span>
-                    @foreach ($isi as $i)
-                    <input type="text" value="{{ $i->jumlah }}" readonly>
-                    @endforeach
+                    <input type="text" value="{{ $jumlah }}" readonly>
                 </div>
                 <div class="input-box">
                     <span class="details">Total Bayar</span>

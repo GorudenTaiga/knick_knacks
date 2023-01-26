@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->text("nama");
             $table->text("detail");
-            $table->integer("harga");
-            $table->integer("stok");
+            $table->integer("harga")->unsigned();
+            $table->integer("stok")->unsigned();
             $table->text("image");
             $table->timestamps();
         });
