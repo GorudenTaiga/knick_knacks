@@ -121,7 +121,7 @@ class OrderController extends Controller
         /* dd($order); */
 
             /* dd($request->all()); */
-}
+    }
 
     /**
      * Display the specified resource.
