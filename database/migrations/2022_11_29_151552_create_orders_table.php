@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->text('produk');
             $table->text('nomor_telpon');
-            $table->integer('total');
+            $table->integer('total')->unsigned();
             $table->enum('metode', ['BCA', 'COD', 'DANA', 'GOPAY']);
             $table->enum('status', ['Diproses', 'Selesai']);
             $table->timestamps();

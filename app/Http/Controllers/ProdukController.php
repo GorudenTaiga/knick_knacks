@@ -43,6 +43,13 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => 'required|string',
+            'harga' => 'required|integer',
+            'detail' => 'required|string',
+            'stok' => 'required|integer',
+            'image' => 'required'
+        ]);
         $image = array();
         if ($files = $request->file('image')) {
             foreach ($files as $file) {
