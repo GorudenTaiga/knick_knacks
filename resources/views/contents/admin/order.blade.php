@@ -135,7 +135,7 @@ tbody{
 <body>
 @include('partials.navbar')
 <div class="row">
-    <div class="col-12">
+    <div class="col-20">
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -167,10 +167,13 @@ tbody{
                         {{ $isian->jumlah }}
                     </td>
                     <td>
-                        {{ $isian->status }}
+                        {{ $isian->total  }}
                     </td>
                     <td>
                         {{ $isian->metode }}
+                    </td>
+                    <td>
+                        {{ $isian->status }}
                     </td>
                     <td>
                         <a href="/success">Success</a>

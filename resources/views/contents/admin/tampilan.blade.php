@@ -8,6 +8,7 @@
     <title>Toko Knick Knacks | {{ $title }}</title>
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
@@ -198,7 +199,19 @@ p {
             </ul>
         </nav>
     </section>
-
+    @hasSection ('success')
+    <div class="container">
+        <div class="alert alert-danger">
+            <strong>Success | Data Berhasil Ditambah</strong>
+        </div>
+    </div>
+    @else
+    <div class="container">
+        <div class="alert alert-success">
+            <strong>Failed | Data Gagal Ditambah</strong>
+        </div>
+    </div>
+    @endif
     <div class="gambar">
         @foreach ($isi as $produk)
             <div class="foto">

@@ -206,7 +206,7 @@ top: 10px;
 @include('contents.style-navbar')
 </head>
 <body>
-    <<div class="container">
+    <div class="container">
         <form method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">
             @csrf
         <div class="user-details">

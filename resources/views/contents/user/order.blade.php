@@ -269,26 +269,24 @@ input{
 </head>
 <body>
     @include('partials.navbar')
+    @foreach ($isi as $i)
     <div class="container">
         <div class="gambar">
-            <div class="container">
             <form action="/user/order/post" method="POST">
                 @csrf
             <div class="user-details">
-
+                <img src="{{ asset('public/foto_produk/'.$i->image) }}" alt=""> {{-- Gambar Produk --}}
                 <div class="input-box">
-                    @foreach ($isi as $i)
-                    <span class="details">Nama Produk : {{ $i->nama_produk }}</span>
-                    <input type="hidden" value="{{ $i->nama_produk }}" readonly>
-                    @endforeach
+                    <span class="details">Nama Produk :</span>
+                    <input type="text" value="{{ $i->nama_produk }}" readonly disabled>
                 </div>
                 <div class="input-box">
-                    <span class="details">Jumlah Beli : {{ $jumlah }} buah</span>
-                    <input type="hidden" value="{{ $jumlah }}" readonly>
+                    <span class="details">Jumlah Beli : </span>
+                    <input type="text" value="{{ $jumlah }}" readonly disabled>
                 </div>
                 <div class="input-box">
-                    <span class="details">Total Bayar : Rp {{ $total }}</span>
-                    <input type="hidden" name="total" placeholder="Total Pesanan" value="{{ $total }}" readonly>
+                    <span class="details">Total Bayar : </span>
+                    <input type="text" name="total" placeholder="Total Pesanan" value="{{ $total }}" readonly disabled>
                 </div>
                 {{-- <div class="input-box">
                     <span class="details">Metode Pembayaran</span>
@@ -308,11 +306,12 @@ input{
                 </div>
             </div>
             <br>
-                <input type="submit" value="Bayar" class="loginn">
-            </form>
-            </div>
-        </div>
+            <input type="submit" value="Bayar" class="loginn">
+        </form>
     </div>
+</div>
+</div>
+@endforeach
 </body>
 </html>
 @endsection
