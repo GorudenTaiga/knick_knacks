@@ -126,9 +126,11 @@ class OrderController extends Controller
         $simpanan = simpanan::where('userid', $id)->get();
         foreach ($simpanan as $s){
             $total = $s->harga*$s->jumlah;
+            $jumlah = $s->jumlah;
         }
         return view('contents.user.order', [
             'isi' => CartModel::where('userid', $id)->get(),
+            'jumlah' => $jumlah,
             'total' => $total
         ]);
     }
