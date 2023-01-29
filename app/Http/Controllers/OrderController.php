@@ -83,7 +83,6 @@ class OrderController extends Controller
                     $p->save();
                 }
             }
-        }
             foreach ($simpanan as $s){
                 $total = $s->harga*$s->jumlah;
             }
@@ -111,6 +110,7 @@ class OrderController extends Controller
             $order->metode = strtolower($request->metode);
             $order->status = 'Diproses';
             $order->save();
+        }
         DB::table('simpanan')->delete();
         DB::table('cart')->delete();
         if ($request->metode == "Whatsapp") {
