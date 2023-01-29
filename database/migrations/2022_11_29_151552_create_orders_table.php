@@ -21,8 +21,8 @@ return new class extends Migration
             $table->text('produk');
             $table->text('nomor_telpon');
             $table->integer('total')->unsigned();
-            $table->enum('metode', ['BCA', 'COD', 'DANA', 'GOPAY']);
-            $table->enum('status', ['Diproses', 'Selesai']);
+            $table->enum('metode', ['BCA', 'COD', 'DANA', 'GOPAY', 'WHATSAPP']);
+            $table->enum('status', ['Diproses', 'Selesai', 'Error']);
             $table->timestamps();
         });
     }

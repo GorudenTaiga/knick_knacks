@@ -102,7 +102,7 @@ class CartModelController extends Controller
         $cart->image = $produks->image;
         }
         $cart->save();
-        return redirect()->back();
+        return redirect('/user/cart');
         /* dd($produks->image); */
     }
 }

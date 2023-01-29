@@ -142,6 +142,60 @@ input{
 .loginn:hover{
     background: grey;
 }
+
+.radio {
+    display: inline-block;
+    justify-content: center;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    left: 120px;
+    bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.radio .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 50%;
+}
+.radio:hover input ~ .check {
+    border: 3px solid #009B71;
+}
+.radio input:checked ~ .check {
+    background-color: #B0EBDB;
+    border:none;
+}
+.radio .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio input:checked ~ .check:after {
+    display: block;
+}
+.radio .check:after {
+    top: 7px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
 .foto img{
     display: inline-block;
     padding-top: 35px;
@@ -223,22 +277,34 @@ input{
             <div class="user-details">
 
                 <div class="input-box">
-                    <span class="details">Nama Produk</span>
                     @foreach ($isi as $i)
-                    <input type="text" value="{{ $i->nama_produk }}" readonly>
+                    <span class="details">Nama Produk : {{ $i->nama_produk }}</span>
+                    <input type="hidden" value="{{ $i->nama_produk }}" readonly>
                     @endforeach
                 </div>
                 <div class="input-box">
-                    <span class="details">Jumlah Beli</span>
-                    <input type="text" value="{{ $jumlah }}" readonly>
+                    <span class="details">Jumlah Beli : {{ $jumlah }} buah</span>
+                    <input type="hidden" value="{{ $jumlah }}" readonly>
                 </div>
                 <div class="input-box">
-                    <span class="details">Total Bayar</span>
-                    <input type="text" name="total" placeholder="Total Pesanan" value="{{ $total }}" readonly>
+                    <span class="details">Total Bayar : Rp {{ $total }}</span>
+                    <input type="hidden" name="total" placeholder="Total Pesanan" value="{{ $total }}" readonly>
                 </div>
-                <div class="input-box">
+                {{-- <div class="input-box">
                     <span class="details">Metode Pembayaran</span>
-                    <input type="text" name="metode" placeholder="BCA/COD/DANA/GOPAY" required="">
+                    <input type="radio" name="metode" placeholder="" value="Whatsapp" required="">
+                    <input type="radio" name="metode" placeholder="" value="M-Banking (Coming Soon)" disabled>
+                </div> --}}
+                <div class="input-box">
+                    <p>Metode Pembayaran</p><br>
+                    <label class="radio">Whatsapp
+                        <input type="radio" checked="checked" name="metode" value="Whatsapp">
+                        <span class="check"></span>
+                    </label>
+                    <label class="radio">M-Banking (Coming Soon)
+                        <input type="radio" name="metode" value="M-Banking" disabled readonly>
+                        <span class="check"></span>
+                    </label>
                 </div>
             </div>
             <br>

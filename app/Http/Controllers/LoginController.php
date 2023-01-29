@@ -11,13 +11,21 @@ class LoginController extends Controller
     public function postLogin(Request $request)
     {
         /* dd($request->all()); */
-        if(Auth::attempt($request->only('email', 'password'))) {
+        /* if(Auth::attempt($request->only('email', 'password'))) {
             if (Auth::user()->level == 'user'){
                 return redirect('/');
             }
             if (Auth::user()->level == 'admin') {
                 return redirect('/admin');
             }
+        } */
+
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($credentials)) {
+            return redirect('/');
         }
         return redirect('/login');
     }

@@ -91,24 +91,32 @@ class OrderController extends Controller
             $order->userid = Auth::user()->id;
             if (Auth::user()) {
                 $order->nama = $user->fullname;
+                $nama = $user->fullname;
                 $order->alamat = $user->alamat;
                 $order->nomor_telpon = $user->phonenumber;
             }
             else {
                 $order->nama = $request->nama;
+                $nama = $request->nama;
                 $order->alamat = $request->alamat;
                 $order->nomor_telpon = $request->nomor_telpon;
             }
             foreach ($simpanan as $simpan) {
+                $nama_prdk = $simpan->produk;
                 $order->produk = $simpan->produk;
             }
             $order->jumlah = $c->jumlah;
+            $jumlah = $c->jumlah;
             $order->total = $total;
             $order->metode = strtolower($request->metode);
             $order->status = 'Diproses';
             $order->save();
         DB::table('simpanan')->delete();
         DB::table('cart')->delete();
+        if ($request->metode == "Whatsapp") {
+            $pesan = "Hai,... Saya $nama ingin membayar produk $nama_prdk sejumlah $jumlah dengan total harga $total,... Terima kasih";
+            return redirect('https://api.whatsapp.com/send/?phone=6289671947676&text='.$pesan.'&type=phone_number&app_absent=0');
+        }
         return redirect('/');
         /* dd($order); */
 
